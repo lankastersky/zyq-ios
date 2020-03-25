@@ -26,6 +26,12 @@
 		7355778D242AFAC6004016FE /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735577862429C16B004016FE /* StorageService.swift */; };
 		7355778E242AFACA004016FE /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7355778A2429C1CA004016FE /* Utils.swift */; };
 		7355778F242AFACF004016FE /* String+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735577842429C13D004016FE /* String+Utils.swift */; };
+		73557794242B07A0004016FE /* StageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73557793242B07A0004016FE /* StageViewController.swift */; };
+		73557795242B07A0004016FE /* StageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73557793242B07A0004016FE /* StageViewController.swift */; };
+		73557797242B115B004016FE /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73557796242B115B004016FE /* UIViewController+Utils.swift */; };
+		73557798242B115B004016FE /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73557796242B115B004016FE /* UIViewController+Utils.swift */; };
+		7355779A242B12D5004016FE /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73557799242B12D5004016FE /* Errors.swift */; };
+		7355779B242B12D5004016FE /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73557799242B12D5004016FE /* Errors.swift */; };
 		73CD82F920E463EA00FEF64D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CD82F820E463EA00FEF64D /* AppDelegate.swift */; };
 		73CD830220E463ED00FEF64D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73CD830120E463ED00FEF64D /* Assets.xcassets */; };
 		98CD97F6F290D6E78DCD2C49 /* Pods_zyq.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A471F31B75F0A78B09DECB7B /* Pods_zyq.framework */; };
@@ -57,6 +63,9 @@
 		735577862429C16B004016FE /* StorageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		735577882429C1B0004016FE /* UIColor+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Utils.swift"; sourceTree = "<group>"; };
 		7355778A2429C1CA004016FE /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		73557793242B07A0004016FE /* StageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageViewController.swift; sourceTree = "<group>"; };
+		73557796242B115B004016FE /* UIViewController+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
+		73557799242B12D5004016FE /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		73CD82F520E463EA00FEF64D /* zyq.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = zyq.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73CD82F820E463EA00FEF64D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		73CD830120E463ED00FEF64D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -149,6 +158,7 @@
 				7355777D2429BFD2004016FE /* HelpViewController.swift */,
 				735577772429BFB0004016FE /* LaunchScreen.storyboard */,
 				735577792429BFB0004016FE /* Main.storyboard */,
+				73557793242B07A0004016FE /* StageViewController.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -172,9 +182,11 @@
 		73E4CEA6210040C80016D41E /* utils */ = {
 			isa = PBXGroup;
 			children = (
+				73557796242B115B004016FE /* UIViewController+Utils.swift */,
 				7355778A2429C1CA004016FE /* Utils.swift */,
 				735577882429C1B0004016FE /* UIColor+Utils.swift */,
 				735577842429C13D004016FE /* String+Utils.swift */,
+				73557799242B12D5004016FE /* Errors.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -385,10 +397,13 @@
 			files = (
 				735577872429C16B004016FE /* StorageService.swift in Sources */,
 				735577852429C13D004016FE /* String+Utils.swift in Sources */,
+				73557797242B115B004016FE /* UIViewController+Utils.swift in Sources */,
 				73CD82F920E463EA00FEF64D /* AppDelegate.swift in Sources */,
 				7355778B2429C1CA004016FE /* Utils.swift in Sources */,
 				735577892429C1B0004016FE /* UIColor+Utils.swift in Sources */,
+				7355779A242B12D5004016FE /* Errors.swift in Sources */,
 				7355777E2429BFD2004016FE /* HelpViewController.swift in Sources */,
+				73557794242B07A0004016FE /* StageViewController.swift in Sources */,
 				7355777F2429C100004016FE /* FeaturesService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -399,10 +414,13 @@
 			files = (
 				7355778D242AFAC6004016FE /* StorageService.swift in Sources */,
 				733771652100458C004A58F8 /* AppDelegate.swift in Sources */,
+				73557798242B115B004016FE /* UIViewController+Utils.swift in Sources */,
 				735577802429C101004016FE /* FeaturesService.swift in Sources */,
 				735577832429C112004016FE /* HelpViewController.swift in Sources */,
 				7355778C242AFA2E004016FE /* UIColor+Utils.swift in Sources */,
+				7355779B242B12D5004016FE /* Errors.swift in Sources */,
 				7355778F242AFACF004016FE /* String+Utils.swift in Sources */,
+				73557795242B07A0004016FE /* StageViewController.swift in Sources */,
 				7355778E242AFACA004016FE /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
