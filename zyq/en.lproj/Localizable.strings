@@ -1,0 +1,9 @@
+
+"tab_bar_help_title" = "Help";
+
+"help_screen_title" = "Help";
+"help_screen_send_feedback" = "Send Feedback";
+"help_screen_send_feedback_alert_title" = "Failed to Send Feedback";
+"help_screen_send_feedback_alert_text" = "Please check that you have a configured email app";
+"help_screen_description" = "todo";
+"help_screen_version" = "Lankastersky Studio\nVersion %@";

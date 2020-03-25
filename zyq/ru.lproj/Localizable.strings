@@ -1,0 +1,9 @@
+
+"tab_bar_help_title" = "Помощь";
+
+"help_screen_title" = "Помощь";
+"help_screen_send_feedback" = "Связаться с автором";
+"help_screen_send_feedback_alert_title" = "Не удалось связаться с автором";
+"help_screen_send_feedback_alert_text" = "Пожалуйста убедитесь, что у вас настроено приложение для отправки почты";
+"help_screen_description" = "todo";
+"help_screen_version" = "Lankastersky Studio\nВерсия %@";
