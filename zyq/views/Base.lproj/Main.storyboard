@@ -93,18 +93,36 @@
         <!--Stage I View Controller-->
         <scene sceneID="R8e-eX-YId">
             <objects>
-                <viewController id="nwx-9h-pFK" userLabel="Stage I View Controller" customClass="StageViewController" customModule="zyq" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="nwx-9h-pFK" userLabel="Stage I View Controller" customClass="StageViewController" customModule="zyq" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ImI-1Z-lYY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ofM-TR-wVO">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <viewLayoutGuide key="safeArea" id="wn9-ZR-aPM"/>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="nwx-9h-pFK" id="DGN-aP-orX"/>
+                                    <outlet property="delegate" destination="nwx-9h-pFK" id="2vo-B4-JIX"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="ZKu-rS-iYt"/>
                     </view>
                     <navigationItem key="navigationItem" id="icT-yw-3ab"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="ofM-TR-wVO" id="Ajx-qC-JlS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pnm-Ph-eRj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="303" y="-417"/>
+            <point key="canvasLocation" x="301.60000000000002" y="-417.8410794602699"/>
         </scene>
         <!--Stage I-->
         <scene sceneID="cpO-mc-YxA">
@@ -191,7 +209,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="ydE-ry-Zvc" kind="relationship" relationship="rootViewController" id="YEG-on-d7G"/>
+                        <segue destination="nwx-9h-pFK" kind="relationship" relationship="rootViewController" id="HbB-0B-Q3V"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yMX-GV-Oal" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -236,4 +254,7 @@
         <image name="baseline_help_black_24pt" width="48" height="48"/>
         <image name="first" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="HbB-0B-Q3V"/>
+    </inferredMetricsTieBreakers>
 </document>

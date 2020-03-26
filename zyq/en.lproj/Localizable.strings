@@ -4,6 +4,10 @@
 "tab_bar_stage3_title" = "Stage III";
 "tab_bar_help_title" = "Help";
 
+"stage1_screen_title" = "Stage I";
+"stage2_screen_title" = "Stage II";
+"stage3_screen_title" = "Stage III";
+
 "help_screen_title" = "Help";
 "help_screen_send_feedback" = "Send Feedback";
 "help_screen_send_feedback_alert_title" = "Failed to Send Feedback";
