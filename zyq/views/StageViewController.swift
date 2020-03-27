@@ -1,27 +1,31 @@
 import UIKit
 
-/// Shows Stage screen
-class StageViewController: UIViewController {
-
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak private var tableHeightConstraint: NSLayoutConstraint!
+/// Shows exercises groups for the given stage.
+/// May be it's better to use tableview instead but I couldn't make it work with adjusted height.
+final class StageViewController: UIViewController {
+    @IBOutlet private var collectionView: UICollectionView!
 
     private var exercises: [String] = []
+    private var selectedItem: Int?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.register(
-            UINib(nibName: "StageTableViewCell", bundle: nil),
-            forCellReuseIdentifier: StageTableViewCell.stageViewCellReuseIdentifier)
+        collectionView?.register(
+            UINib(nibName: "StageCollectionViewCell", bundle: nil),
+            forCellWithReuseIdentifier: StageCollectionViewCell.stageCellReuseIdentifier
+        )
+        // See https://goo.gl/yAUR1R
+        if let flowLayout = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
+            flowLayout.estimatedItemSize = CGSize(width: 1, height: 1)
+        }
     }
 
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        guard let tabBarController = self.appDelegate.window?.rootViewController as? UITabBarController else {
+        guard let tabBarController = self.appDelegate.window?.rootViewController as?
+            UITabBarController else {
             assertionFailure("Failed to get tab bar controller")
             return
         }
@@ -30,43 +34,58 @@ class StageViewController: UIViewController {
         switch(stage) {
         case NavigationTab.stage1.rawValue:
             navigationItem.title = "stage1_screen_title".localized
-            exercises = [String](repeating: "1", count: 8)
+            exercises = [String](repeating: "1", count: 12)
             break
         case NavigationTab.stage2.rawValue:
             navigationItem.title = "stage2_screen_title".localized
-            exercises = [String](repeating: "2", count: 12)
+            exercises = [String](repeating: "2", count: 5)
             break
         case NavigationTab.stage3.rawValue:
             navigationItem.title = "stage3_screen_title".localized
+            exercises = [String](repeating: "3", count: 2)
             break
         default:
             break
         }
-
-        // TODO: fix height
-        tableView.reloadData()
-        //tableHeightConstraint.constant = tableView.contentSize.height
-        tableView.layoutIfNeeded()
-//        tableView.heightAnchor.constraint(equalToConstant: tableView.contentSize.height).isActive = true
-
+        collectionView.reloadData()
     }
 }
 
+extension StageViewController: UICollectionViewDataSource {
 
-extension StageViewController: UITableViewDataSource {
+    func collectionView(_ collectionView: UICollectionView,
+                        numberOfItemsInSection section: Int) -> Int {
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return exercises.count;
+        return exercises.count
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(
-            withIdentifier: StageTableViewCell.stageViewCellReuseIdentifier)
-            as? StageTableViewCell else {
-                assertionFailure("Failed to get stage cell")
-                return UITableViewCell()
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        guard let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: StageCollectionViewCell.stageCellReuseIdentifier,
+            for: indexPath
+        ) as? StageCollectionViewCell else {
+            print("Failed to instantiate journal cell")
+            return UICollectionViewCell()
         }
-        cell.nameLabel.text = exercises[indexPath.row];
+
+        assert(indexPath.item < exercises.count,
+               "Bad challenge index when creating collection view")
+
+        let challenge: String = exercises[indexPath.item]
+        cell.nameLabel.text = challenge
         return cell
+    }
+}
+
+extension StageViewController: UICollectionViewDelegate {
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        assert(indexPath.item < exercises.count,
+               "Bad challenge index when creating collection view")
+        selectedItem = indexPath.item
+        let challenge: String = exercises[indexPath.item]
+        //openChallengeView(challenge)
     }
 }

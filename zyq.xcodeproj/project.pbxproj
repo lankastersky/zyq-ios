@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		732B1DA1242D765B00F95598 /* StageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732B1D9E242D765B00F95598 /* StageViewController.swift */; };
+		732B1DA2242D765B00F95598 /* StageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 732B1D9F242D765B00F95598 /* StageCollectionViewCell.xib */; };
+		732B1DA3242D765B00F95598 /* StageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732B1DA0242D765B00F95598 /* StageCollectionViewCell.swift */; };
+		732B1DA4242D7FE300F95598 /* StageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 732B1D9F242D765B00F95598 /* StageCollectionViewCell.xib */; };
+		732B1DA5242D805C00F95598 /* StageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732B1DA0242D765B00F95598 /* StageCollectionViewCell.swift */; };
+		732B1DA6242D805F00F95598 /* StageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732B1D9E242D765B00F95598 /* StageViewController.swift */; };
 		733771652100458C004A58F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CD82F820E463EA00FEF64D /* AppDelegate.swift */; };
 		7337717921111C7E004A58F8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7337717C21111C7E004A58F8 /* Localizable.strings */; };
 		7337717A21111C7E004A58F8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7337717C21111C7E004A58F8 /* Localizable.strings */; };
@@ -26,16 +32,12 @@
 		7355778D242AFAC6004016FE /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735577862429C16B004016FE /* StorageService.swift */; };
 		7355778E242AFACA004016FE /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7355778A2429C1CA004016FE /* Utils.swift */; };
 		7355778F242AFACF004016FE /* String+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735577842429C13D004016FE /* String+Utils.swift */; };
-		73557794242B07A0004016FE /* StageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73557793242B07A0004016FE /* StageViewController.swift */; };
-		73557795242B07A0004016FE /* StageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73557793242B07A0004016FE /* StageViewController.swift */; };
 		73557797242B115B004016FE /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73557796242B115B004016FE /* UIViewController+Utils.swift */; };
 		73557798242B115B004016FE /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73557796242B115B004016FE /* UIViewController+Utils.swift */; };
 		7355779A242B12D5004016FE /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73557799242B12D5004016FE /* Errors.swift */; };
 		7355779B242B12D5004016FE /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73557799242B12D5004016FE /* Errors.swift */; };
 		7355779D242C4D46004016FE /* NavigationTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7355779C242C4D46004016FE /* NavigationTab.swift */; };
 		7355779E242C4D46004016FE /* NavigationTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7355779C242C4D46004016FE /* NavigationTab.swift */; };
-		735577A7242C550F004016FE /* StageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735577A5242C550F004016FE /* StageTableViewCell.swift */; };
-		735577A8242C550F004016FE /* StageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735577A5242C550F004016FE /* StageTableViewCell.swift */; };
 		735577A9242C550F004016FE /* StageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 735577A6242C550F004016FE /* StageTableViewCell.xib */; };
 		735577AA242C550F004016FE /* StageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 735577A6242C550F004016FE /* StageTableViewCell.xib */; };
 		73CD82F920E463EA00FEF64D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CD82F820E463EA00FEF64D /* AppDelegate.swift */; };
@@ -59,6 +61,9 @@
 		358065CE271683AAD657CCD0 /* Pods_zenUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_zenUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A8A4A7E282FFEA13BB3E033 /* Pods-zyq.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zyq.release.xcconfig"; path = "Pods/Target Support Files/Pods-zyq/Pods-zyq.release.xcconfig"; sourceTree = "<group>"; };
 		6C36983E312BF7AF9301516D /* Pods-zyqTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zyqTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-zyqTests/Pods-zyqTests.debug.xcconfig"; sourceTree = "<group>"; };
+		732B1D9E242D765B00F95598 /* StageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StageViewController.swift; sourceTree = "<group>"; };
+		732B1D9F242D765B00F95598 /* StageCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StageCollectionViewCell.xib; sourceTree = "<group>"; };
+		732B1DA0242D765B00F95598 /* StageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StageCollectionViewCell.swift; sourceTree = "<group>"; };
 		7337717B21111C7E004A58F8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7337717D21111C81004A58F8 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		735577762429BACC004016FE /* FeaturesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturesService.swift; sourceTree = "<group>"; };
@@ -69,11 +74,9 @@
 		735577862429C16B004016FE /* StorageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		735577882429C1B0004016FE /* UIColor+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Utils.swift"; sourceTree = "<group>"; };
 		7355778A2429C1CA004016FE /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		73557793242B07A0004016FE /* StageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageViewController.swift; sourceTree = "<group>"; };
 		73557796242B115B004016FE /* UIViewController+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
 		73557799242B12D5004016FE /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		7355779C242C4D46004016FE /* NavigationTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTab.swift; sourceTree = "<group>"; };
-		735577A5242C550F004016FE /* StageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageTableViewCell.swift; sourceTree = "<group>"; };
 		735577A6242C550F004016FE /* StageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StageTableViewCell.xib; sourceTree = "<group>"; };
 		73CD82F520E463EA00FEF64D /* zyq.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = zyq.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73CD82F820E463EA00FEF64D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -164,11 +167,12 @@
 		73CD832820E4752A00FEF64D /* views */ = {
 			isa = PBXGroup;
 			children = (
+				732B1DA0242D765B00F95598 /* StageCollectionViewCell.swift */,
+				732B1D9F242D765B00F95598 /* StageCollectionViewCell.xib */,
+				732B1D9E242D765B00F95598 /* StageViewController.swift */,
 				7355777D2429BFD2004016FE /* HelpViewController.swift */,
 				735577772429BFB0004016FE /* LaunchScreen.storyboard */,
 				735577792429BFB0004016FE /* Main.storyboard */,
-				73557793242B07A0004016FE /* StageViewController.swift */,
-				735577A5242C550F004016FE /* StageTableViewCell.swift */,
 				735577A6242C550F004016FE /* StageTableViewCell.xib */,
 			);
 			path = views;
@@ -318,6 +322,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				732B1DA2242D765B00F95598 /* StageCollectionViewCell.xib in Resources */,
 				7355777B2429BFB0004016FE /* LaunchScreen.storyboard in Resources */,
 				73CD830220E463ED00FEF64D /* Assets.xcassets in Resources */,
 				7337717921111C7E004A58F8 /* Localizable.strings in Resources */,
@@ -330,6 +335,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				732B1DA4242D7FE300F95598 /* StageCollectionViewCell.xib in Resources */,
 				735577822429C110004016FE /* LaunchScreen.storyboard in Resources */,
 				7337717A21111C7E004A58F8 /* Localizable.strings in Resources */,
 				735577AA242C550F004016FE /* StageTableViewCell.xib in Resources */,
@@ -409,6 +415,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				732B1DA3242D765B00F95598 /* StageCollectionViewCell.swift in Sources */,
 				735577872429C16B004016FE /* StorageService.swift in Sources */,
 				735577852429C13D004016FE /* String+Utils.swift in Sources */,
 				73557797242B115B004016FE /* UIViewController+Utils.swift in Sources */,
@@ -418,8 +425,7 @@
 				735577892429C1B0004016FE /* UIColor+Utils.swift in Sources */,
 				7355779A242B12D5004016FE /* Errors.swift in Sources */,
 				7355777E2429BFD2004016FE /* HelpViewController.swift in Sources */,
-				73557794242B07A0004016FE /* StageViewController.swift in Sources */,
-				735577A7242C550F004016FE /* StageTableViewCell.swift in Sources */,
+				732B1DA1242D765B00F95598 /* StageViewController.swift in Sources */,
 				7355777F2429C100004016FE /* FeaturesService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -429,16 +435,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				7355778D242AFAC6004016FE /* StorageService.swift in Sources */,
+				732B1DA6242D805F00F95598 /* StageViewController.swift in Sources */,
 				733771652100458C004A58F8 /* AppDelegate.swift in Sources */,
 				73557798242B115B004016FE /* UIViewController+Utils.swift in Sources */,
 				7355779E242C4D46004016FE /* NavigationTab.swift in Sources */,
 				735577802429C101004016FE /* FeaturesService.swift in Sources */,
+				732B1DA5242D805C00F95598 /* StageCollectionViewCell.swift in Sources */,
 				735577832429C112004016FE /* HelpViewController.swift in Sources */,
 				7355778C242AFA2E004016FE /* UIColor+Utils.swift in Sources */,
 				7355779B242B12D5004016FE /* Errors.swift in Sources */,
 				7355778F242AFACF004016FE /* String+Utils.swift in Sources */,
-				73557795242B07A0004016FE /* StageViewController.swift in Sources */,
-				735577A8242C550F004016FE /* StageTableViewCell.swift in Sources */,
 				7355778E242AFACA004016FE /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -608,7 +614,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = URX5QAH68L;
 				INFOPLIST_FILE = "$(SRCROOT)/zyq/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -631,7 +637,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = URX5QAH68L;
 				INFOPLIST_FILE = "$(SRCROOT)/zyq/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
