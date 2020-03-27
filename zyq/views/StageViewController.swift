@@ -3,6 +3,9 @@ import UIKit
 /// Shows exercises groups for the given stage.
 /// May be it's better to use tableview instead but I couldn't make it work with adjusted height.
 final class StageViewController: UIViewController {
+
+    private let leftRightMargin: CGFloat = 12.0
+
     @IBOutlet private var collectionView: UICollectionView!
 
     private var exercises: [String] = []
@@ -15,9 +18,14 @@ final class StageViewController: UIViewController {
             UINib(nibName: "StageCollectionViewCell", bundle: nil),
             forCellWithReuseIdentifier: StageCollectionViewCell.stageCellReuseIdentifier
         )
+        
         // See https://goo.gl/yAUR1R
         if let flowLayout = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
-            flowLayout.estimatedItemSize = CGSize(width: 1, height: 1)
+            if #available(iOS 10.0, *) {
+                flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+            } else {
+                flowLayout.estimatedItemSize = CGSize(width: 1, height: 1)
+            }
         }
     }
 
@@ -75,6 +83,8 @@ extension StageViewController: UICollectionViewDataSource {
 
         let challenge: String = exercises[indexPath.item]
         cell.nameLabel.text = challenge
+
+        cell.widthConstraint.constant = collectionView.frame.size.width - 2.0 * leftRightMargin
         return cell
     }
 }
