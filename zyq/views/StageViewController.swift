@@ -21,11 +21,7 @@ final class StageViewController: UIViewController {
         
         // See https://goo.gl/yAUR1R
         if let flowLayout = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
-            if #available(iOS 10.0, *) {
-                flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-            } else {
                 flowLayout.estimatedItemSize = CGSize(width: 1, height: 1)
-            }
         }
     }
 
