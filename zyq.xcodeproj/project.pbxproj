@@ -284,11 +284,11 @@
 				TargetAttributes = {
 					73CD82F420E463EA00FEF64D = {
 						CreatedOnToolsVersion = 9.4;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1130;
 					};
 					73CD830A20E463EE00FEF64D = {
 						CreatedOnToolsVersion = 9.4;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1130;
 						TestTargetID = 73CD82F420E463EA00FEF64D;
 					};
 				};
@@ -617,7 +617,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.hypercyclone.zyq;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -639,7 +639,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.hypercyclone.zyq;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -660,7 +660,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hcyclone.zyqTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/zyq.app/zyq";
 			};
@@ -682,7 +682,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hcyclone.zyqTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/zyq.app/zyq";
 			};
