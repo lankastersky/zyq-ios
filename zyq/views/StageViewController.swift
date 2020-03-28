@@ -79,6 +79,8 @@ extension StageViewController: UICollectionViewDataSource {
 
         let challenge: String = exercises[indexPath.item]
         cell.nameLabel.text = challenge
+        cell.showType(indexPath.item % 2 == 0)
+
 
         cell.widthConstraint.constant = collectionView.frame.size.width - 2.0 * leftRightMargin
         return cell
