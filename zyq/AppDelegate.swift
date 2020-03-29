@@ -4,7 +4,7 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    lazy var excerciseService = ExcerciseService()
+    lazy var exerciseService = ExerciseService()
 
     var window: UIWindow?
 
@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         configureTabBarIcons()
 
         FeaturesService().storeAppVersion()
-        excerciseService.load()
+        exerciseService.load()
         return true
     }
 

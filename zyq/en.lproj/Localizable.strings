@@ -14,3 +14,9 @@
 "help_screen_send_feedback_alert_text" = "Please check that you have a configured email app";
 "help_screen_description" = "todo";
 "help_screen_version" = "Lankastersky Studio\nVersion %@";
+
+"ex_group_warmup" = "Preliminary exericses";
+"ex_group_main" = "Main exercises";
+"ex_group_supporting" = "Supporting exercises";
+"ex_group_closing" = "Closing exercises";
+"ex_group_treatment" = "Diagnosis and treatment";

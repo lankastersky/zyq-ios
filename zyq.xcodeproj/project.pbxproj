@@ -20,10 +20,14 @@
 		734BD509243019C5006E6A16 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734BD507243019C5006E6A16 /* Exercise.swift */; };
 		734BD50B24301A47006E6A16 /* ExerciseGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734BD50A24301A47006E6A16 /* ExerciseGroup.swift */; };
 		734BD50C24301A47006E6A16 /* ExerciseGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734BD50A24301A47006E6A16 /* ExerciseGroup.swift */; };
-		734BD50E24301ABD006E6A16 /* ExcerciseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734BD50D24301ABD006E6A16 /* ExcerciseService.swift */; };
-		734BD50F24301ABD006E6A16 /* ExcerciseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734BD50D24301ABD006E6A16 /* ExcerciseService.swift */; };
+		734BD50E24301ABD006E6A16 /* ExerciseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734BD50D24301ABD006E6A16 /* ExerciseService.swift */; };
+		734BD50F24301ABD006E6A16 /* ExerciseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734BD50D24301ABD006E6A16 /* ExerciseService.swift */; };
 		734BD5F12430278B006E6A16 /* assets in Resources */ = {isa = PBXBuildFile; fileRef = 734BD5F02430278A006E6A16 /* assets */; };
 		734BD5F22430278B006E6A16 /* assets in Resources */ = {isa = PBXBuildFile; fileRef = 734BD5F02430278A006E6A16 /* assets */; };
+		734BD5F42430462E006E6A16 /* ExerciseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734BD5F32430462E006E6A16 /* ExerciseType.swift */; };
+		734BD5F52430462E006E6A16 /* ExerciseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734BD5F32430462E006E6A16 /* ExerciseType.swift */; };
+		734BD5F7243049A4006E6A16 /* LevelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734BD5F6243049A4006E6A16 /* LevelType.swift */; };
+		734BD5F8243049A4006E6A16 /* LevelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734BD5F6243049A4006E6A16 /* LevelType.swift */; };
 		7355777B2429BFB0004016FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 735577772429BFB0004016FE /* LaunchScreen.storyboard */; };
 		7355777C2429BFB0004016FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 735577792429BFB0004016FE /* Main.storyboard */; };
 		7355777E2429BFD2004016FE /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7355777D2429BFD2004016FE /* HelpViewController.swift */; };
@@ -75,8 +79,10 @@
 		734BD506243010F7006E6A16 /* zyq.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = zyq.entitlements; sourceTree = "<group>"; };
 		734BD507243019C5006E6A16 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		734BD50A24301A47006E6A16 /* ExerciseGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseGroup.swift; sourceTree = "<group>"; };
-		734BD50D24301ABD006E6A16 /* ExcerciseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcerciseService.swift; sourceTree = "<group>"; };
+		734BD50D24301ABD006E6A16 /* ExerciseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseService.swift; sourceTree = "<group>"; };
 		734BD5F02430278A006E6A16 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = "<group>"; };
+		734BD5F32430462E006E6A16 /* ExerciseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseType.swift; sourceTree = "<group>"; };
+		734BD5F6243049A4006E6A16 /* LevelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelType.swift; sourceTree = "<group>"; };
 		735577762429BACC004016FE /* FeaturesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturesService.swift; sourceTree = "<group>"; };
 		735577782429BFB0004016FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7355777A2429BFB0004016FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -192,7 +198,7 @@
 		73CD832920E4759800FEF64D /* services */ = {
 			isa = PBXGroup;
 			children = (
-				734BD50D24301ABD006E6A16 /* ExcerciseService.swift */,
+				734BD50D24301ABD006E6A16 /* ExerciseService.swift */,
 				735577862429C16B004016FE /* StorageService.swift */,
 				735577762429BACC004016FE /* FeaturesService.swift */,
 			);
@@ -205,6 +211,8 @@
 				7355779C242C4D46004016FE /* NavigationTab.swift */,
 				734BD507243019C5006E6A16 /* Exercise.swift */,
 				734BD50A24301A47006E6A16 /* ExerciseGroup.swift */,
+				734BD5F32430462E006E6A16 /* ExerciseType.swift */,
+				734BD5F6243049A4006E6A16 /* LevelType.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -453,10 +461,12 @@
 				735577852429C13D004016FE /* String+Utils.swift in Sources */,
 				73557797242B115B004016FE /* UIViewController+Utils.swift in Sources */,
 				7355779D242C4D46004016FE /* NavigationTab.swift in Sources */,
+				734BD5F7243049A4006E6A16 /* LevelType.swift in Sources */,
 				734BD50B24301A47006E6A16 /* ExerciseGroup.swift in Sources */,
 				73CD82F920E463EA00FEF64D /* AppDelegate.swift in Sources */,
+				734BD5F42430462E006E6A16 /* ExerciseType.swift in Sources */,
 				7355778B2429C1CA004016FE /* Utils.swift in Sources */,
-				734BD50E24301ABD006E6A16 /* ExcerciseService.swift in Sources */,
+				734BD50E24301ABD006E6A16 /* ExerciseService.swift in Sources */,
 				735577892429C1B0004016FE /* UIColor+Utils.swift in Sources */,
 				7355779A242B12D5004016FE /* Errors.swift in Sources */,
 				7355777E2429BFD2004016FE /* HelpViewController.swift in Sources */,
@@ -475,10 +485,12 @@
 				733771652100458C004A58F8 /* AppDelegate.swift in Sources */,
 				73557798242B115B004016FE /* UIViewController+Utils.swift in Sources */,
 				7355779E242C4D46004016FE /* NavigationTab.swift in Sources */,
+				734BD5F8243049A4006E6A16 /* LevelType.swift in Sources */,
 				734BD50C24301A47006E6A16 /* ExerciseGroup.swift in Sources */,
 				735577802429C101004016FE /* FeaturesService.swift in Sources */,
+				734BD5F52430462E006E6A16 /* ExerciseType.swift in Sources */,
 				732B1DA5242D805C00F95598 /* StageCollectionViewCell.swift in Sources */,
-				734BD50F24301ABD006E6A16 /* ExcerciseService.swift in Sources */,
+				734BD50F24301ABD006E6A16 /* ExerciseService.swift in Sources */,
 				735577832429C112004016FE /* HelpViewController.swift in Sources */,
 				7355778C242AFA2E004016FE /* UIColor+Utils.swift in Sources */,
 				7355779B242B12D5004016FE /* Errors.swift in Sources */,

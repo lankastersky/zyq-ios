@@ -1,7 +1,7 @@
 import Foundation
 import SwiftyJSON
 
-final class ExcerciseService {
+final class ExerciseService {
 
     private var exercisesMap: [String: Exercise] = [:]
     private let jsonDecoder: JSONDecoder
@@ -29,6 +29,23 @@ final class ExcerciseService {
             loadExercises(from: "exercises2_en.json", to: &exercisesMap)
             loadExercises(from: "exercises3_en.json", to: &exercisesMap)
         }
+    }
+
+    public func buildExerciseGroups(level: LevelType) -> [ExerciseGroup] {
+        var groups = [ExerciseGroup]()
+        groups.append(ExerciseGroup(
+            ExerciseType.warmup.description, ExerciseType.warmup.rawValue, level.rawValue))
+        groups.append(ExerciseGroup(
+            ExerciseType.main.description, ExerciseType.main.rawValue, level.rawValue))
+        groups.append(ExerciseGroup(
+            ExerciseType.supporting.description, ExerciseType.supporting.rawValue, level.rawValue))
+        // TODO: check if we have them
+        groups.append(ExerciseGroup(
+            ExerciseType.closing.description, ExerciseType.closing.rawValue, level.rawValue))
+        // TODO: check if we have them
+        groups.append(ExerciseGroup(
+            ExerciseType.treatment.description, ExerciseType.treatment.rawValue, level.rawValue))
+        return groups
     }
 
     private func loadExercises(from fileName: String, to map: inout [String: Exercise]) {

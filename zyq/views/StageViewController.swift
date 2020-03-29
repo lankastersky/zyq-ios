@@ -8,7 +8,7 @@ final class StageViewController: UIViewController {
 
     @IBOutlet private var collectionView: UICollectionView!
 
-    private var exercises: [String] = []
+    private var exerciseGroups: [ExerciseGroup] = []
     private var selectedItem: Int?
 
     override func viewDidLoad() {
@@ -38,15 +38,15 @@ final class StageViewController: UIViewController {
         switch(stage) {
         case NavigationTab.stage1.rawValue:
             navigationItem.title = "stage1_screen_title".localized
-            exercises = [String](repeating: "1", count: 12)
+            exerciseGroups = self.exerciseService.buildExerciseGroups(level: LevelType.first)
             break
         case NavigationTab.stage2.rawValue:
             navigationItem.title = "stage2_screen_title".localized
-            exercises = [String](repeating: "2", count: 5)
+            exerciseGroups = self.exerciseService.buildExerciseGroups(level: LevelType.second)
             break
         case NavigationTab.stage3.rawValue:
             navigationItem.title = "stage3_screen_title".localized
-            exercises = [String](repeating: "3", count: 2)
+            exerciseGroups = self.exerciseService.buildExerciseGroups(level: LevelType.third)
             break
         default:
             break
@@ -60,7 +60,7 @@ extension StageViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
 
-        return exercises.count
+        return exerciseGroups.count
     }
 
     func collectionView(_ collectionView: UICollectionView,
@@ -74,11 +74,11 @@ extension StageViewController: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
 
-        assert(indexPath.item < exercises.count,
+        assert(indexPath.item < exerciseGroups.count,
                "Bad challenge index when creating collection view")
 
-        let challenge: String = exercises[indexPath.item]
-        cell.nameLabel.text = challenge
+        let group: ExerciseGroup = exerciseGroups[indexPath.item]
+        cell.nameLabel.text = group.name
         cell.showType(indexPath.item % 2 == 0)
 
         cell.widthConstraint.constant = collectionView.frame.size.width - 2.0 * leftRightMargin
@@ -89,10 +89,10 @@ extension StageViewController: UICollectionViewDataSource {
 extension StageViewController: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        assert(indexPath.item < exercises.count,
+        assert(indexPath.item < exerciseGroups.count,
                "Bad challenge index when creating collection view")
         selectedItem = indexPath.item
-        let challenge: String = exercises[indexPath.item]
-        //openChallengeView(challenge)
+        let group: ExerciseGroup = exerciseGroups[indexPath.item]
+        // todo: open group
     }
 }
