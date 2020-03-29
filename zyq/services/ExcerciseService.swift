@@ -15,9 +15,20 @@ final class ExcerciseService {
     }
 
     func load() {
-        loadExercises(from: "exercises1.json", to: &exercisesMap)
-        loadExercises(from: "exercises2.json", to: &exercisesMap)
-        loadExercises(from: "exercises3.json", to: &exercisesMap)
+        exercisesMap.removeAll()
+        guard let preferredLanguage = Locale.preferredLanguages.first else {
+            assertionFailure("Failed to get locale")
+            return
+        }
+        if preferredLanguage.starts(with: "ru-") {
+            loadExercises(from: "exercises1.json", to: &exercisesMap)
+            loadExercises(from: "exercises2.json", to: &exercisesMap)
+            loadExercises(from: "exercises3.json", to: &exercisesMap)
+        } else {
+            loadExercises(from: "exercises1_en.json", to: &exercisesMap)
+            loadExercises(from: "exercises2_en.json", to: &exercisesMap)
+            loadExercises(from: "exercises3_en.json", to: &exercisesMap)
+        }
     }
 
     private func loadExercises(from fileName: String, to map: inout [String: Exercise]) {
@@ -39,17 +50,17 @@ final class ExcerciseService {
                     exJson["name"].string ?? "",
                     exJson["type"].int ?? 0,
                     exJson["level"].int ?? 0,
-                exJson["id"].string ?? "",
-                exJson["description"].string ?? "",
-                exJson["imageName"].string ?? "",
-                exJson["videoUrl"].string ?? "",
-                exJson["tags"].string ?? "",
-                exJson["detailsFileName"].string ?? ""
+                    exJson["id"].string ?? "",
+                    exJson["description"].string ?? "",
+                    exJson["imageName"].string ?? "",
+                    exJson["videoUrl"].string ?? "",
+                    exJson["tags"].string ?? "",
+                    exJson["detailsFileName"].string ?? ""
                 )
                 map[ex.id] = ex
             }
         } catch let error {
-            print("parse error: \(error.localizedDescription)")
+            assertionFailure("parse error: \(error.localizedDescription)")
         }
     }
 }
