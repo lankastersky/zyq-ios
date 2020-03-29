@@ -4,6 +4,7 @@ target 'zyq' do
   use_frameworks!
 
   pod 'SwiftLint', '~> 0.27'
+  pod 'SwiftyJSON', '~> 4.0'
 
 target 'zyqTests' do
     inherit! :search_paths
