@@ -1,7 +1,8 @@
 import Foundation
 
 enum LevelType: Int {
-    case first = 1
+    case unknown = 0
+    case first
     case second
     case third
 }

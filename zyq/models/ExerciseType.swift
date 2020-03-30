@@ -1,7 +1,7 @@
 import Foundation
 
 enum ExerciseType: Int {
-    //case unknown
+    case unknown = 0
     case warmup
     case main
     case supporting
@@ -10,6 +10,7 @@ enum ExerciseType: Int {
 
     var description: String {
         switch self {
+        case .unknown: return ""
         case .warmup: return "ex_group_warmup".localized
         case .main: return "ex_group_main".localized
         case .supporting: return "ex_group_supporting".localized

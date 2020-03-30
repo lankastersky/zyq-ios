@@ -2,13 +2,13 @@ import Foundation
 
 class ExerciseGroup {
     var name: String
-    var type: Int
-    var level: Int
+    var type: ExerciseType
+    var level: LevelType
 
     init(
         _ name: String,
-        _ type: Int,
-        _ level: Int
+        _ type: ExerciseType,
+        _ level: LevelType
     ) {
         self.name = name
         self.type = type

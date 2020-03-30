@@ -10,8 +10,8 @@ final class Exercise: ExerciseGroup {
 
     init(
         _ name: String,
-        _ type: Int,
-        _ level: Int,
+        _ type: ExerciseType,
+        _ level: LevelType,
         _ id: String,
         _ description: String,
         _ imageName: String,

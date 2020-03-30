@@ -34,18 +34,34 @@ final class ExerciseService {
     public func buildExerciseGroups(level: LevelType) -> [ExerciseGroup] {
         var groups = [ExerciseGroup]()
         groups.append(ExerciseGroup(
-            ExerciseType.warmup.description, ExerciseType.warmup.rawValue, level.rawValue))
+            ExerciseType.warmup.description, ExerciseType.warmup, level))
         groups.append(ExerciseGroup(
-            ExerciseType.main.description, ExerciseType.main.rawValue, level.rawValue))
+            ExerciseType.main.description, ExerciseType.main, level))
         groups.append(ExerciseGroup(
-            ExerciseType.supporting.description, ExerciseType.supporting.rawValue, level.rawValue))
+            ExerciseType.supporting.description, ExerciseType.supporting, level))
         // TODO: check if we have them
         groups.append(ExerciseGroup(
-            ExerciseType.closing.description, ExerciseType.closing.rawValue, level.rawValue))
+            ExerciseType.closing.description, ExerciseType.closing, level))
         // TODO: check if we have them
         groups.append(ExerciseGroup(
-            ExerciseType.treatment.description, ExerciseType.treatment.rawValue, level.rawValue))
+            ExerciseType.treatment.description, ExerciseType.treatment, level))
         return groups
+    }
+
+    public func getExercises(level: LevelType, type: ExerciseType) -> [Exercise] {
+        var exercises = [Exercise]()
+        for (_, ex) in exercisesMap {
+            if (type != .unknown) {
+                if (ex.type != type) {
+                    continue
+                }
+            }
+            if (ex.level != level) {
+                continue
+            }
+            exercises.append(ex)
+        }
+        return exercises
     }
 
     public func getPracticeDescription(level: LevelType) -> URL? {
@@ -76,8 +92,10 @@ final class ExerciseService {
             for (_, exJson): (String, JSON) in jsonObj {
                 let ex = Exercise(
                     exJson["name"].string ?? "",
-                    exJson["type"].int ?? 0,
-                    exJson["level"].int ?? 0,
+                    ExerciseType(rawValue: Int(exJson["type"].stringValue) ?? 0)
+                        ?? ExerciseType.unknown,
+                    LevelType(rawValue: Int(exJson["level"].stringValue) ?? 0)
+                        ?? LevelType.unknown,
                     exJson["id"].string ?? "",
                     exJson["description"].string ?? "",
                     exJson["imageName"].string ?? "",

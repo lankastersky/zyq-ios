@@ -1,8 +1,8 @@
 import UIKit
 
-final class StageCollectionViewCell: UICollectionViewCell {
+final class CollectionViewCell: UICollectionViewCell {
 
-    static let stageCellReuseIdentifier = "StageCell"
+    static let collectionCellReuseIdentifier = "CollectionCell"
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var typeLabel: UILabel!

@@ -194,35 +194,8 @@
                     <view key="view" contentMode="scaleToFill" id="r2J-cV-E17">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="RrF-cy-2Ip">
-                                <rect key="frame" x="0.0" y="44" width="375" height="574"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="A54-xF-tiB">
-                                    <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="12" minY="10" maxX="12" maxY="10"/>
-                                </collectionViewFlowLayout>
-                                <cells/>
-                                <connections>
-                                    <outlet property="dataSource" destination="3LN-be-CVy" id="KjJ-fO-6Fe"/>
-                                    <outlet property="delegate" destination="3LN-be-CVy" id="loL-8W-6lE"/>
-                                </connections>
-                            </collectionView>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="RrF-cy-2Ip" secondAttribute="trailing" id="07Q-vv-nhA"/>
-                            <constraint firstItem="67f-XD-3eA" firstAttribute="top" secondItem="RrF-cy-2Ip" secondAttribute="bottom" id="DgY-zA-1g6"/>
-                            <constraint firstItem="RrF-cy-2Ip" firstAttribute="leading" secondItem="r2J-cV-E17" secondAttribute="leading" id="RGD-jq-Ppw"/>
-                            <constraint firstItem="RrF-cy-2Ip" firstAttribute="top" secondItem="Zp1-ny-1eY" secondAttribute="bottom" id="YWK-cG-Ge8"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="oH1-jF-5fr"/>
-                    <connections>
-                        <outlet property="collectionView" destination="RrF-cy-2Ip" id="fN9-nA-aNY"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IZb-Dk-eXB" sceneMemberID="firstResponder"/>
             </objects>
