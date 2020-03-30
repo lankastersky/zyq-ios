@@ -9,6 +9,7 @@ final class StageViewController: UIViewController {
     @IBOutlet private var collectionView: UICollectionView!
 
     private var exerciseGroups: [ExerciseGroup] = []
+    private var descriptionUrl: URL?
     private var selectedItem: Int?
 
     override func viewDidLoad() {
@@ -38,20 +39,36 @@ final class StageViewController: UIViewController {
         switch(stage) {
         case NavigationTab.stage1.rawValue:
             navigationItem.title = "stage1_screen_title".localized
-            exerciseGroups = self.exerciseService.buildExerciseGroups(level: LevelType.first)
             break
         case NavigationTab.stage2.rawValue:
             navigationItem.title = "stage2_screen_title".localized
-            exerciseGroups = self.exerciseService.buildExerciseGroups(level: LevelType.second)
             break
         case NavigationTab.stage3.rawValue:
             navigationItem.title = "stage3_screen_title".localized
-            exerciseGroups = self.exerciseService.buildExerciseGroups(level: LevelType.third)
             break
         default:
             break
         }
+        guard let level = LevelType(rawValue: stage + 1) else {
+            return
+        }
+        exerciseGroups = self.exerciseService.buildExerciseGroups(level: level)
+        descriptionUrl = exerciseService.getPracticeDescription(level: level)
+        if (descriptionUrl != nil) {
+            let helpButton = UIBarButtonItem(
+                image: UIImage(named: "help_icon")?.withRenderingMode(.alwaysOriginal),
+            style: .plain, target: self, action: #selector(showDescription))
+            navigationItem.rightBarButtonItem = helpButton
+        } else {
+            navigationItem.rightBarButtonItem = nil
+        }
         collectionView.reloadData()
+    }
+
+    @objc private func showDescription() {
+        let descriptionViewController = DescriptionViewController()
+        descriptionViewController.url = descriptionUrl
+        self.navigationController?.pushViewController(descriptionViewController, animated: true)
     }
 }
 

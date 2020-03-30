@@ -15,6 +15,8 @@
 "help_screen_description" = "todo";
 "help_screen_version" = "Lankastersky Studio\nVersion %@";
 
+"description_title" = "Description";
+
 "ex_group_warmup" = "Preliminary exericses";
 "ex_group_main" = "Main exercises";
 "ex_group_supporting" = "Supporting exercises";

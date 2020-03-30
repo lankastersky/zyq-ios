@@ -48,6 +48,17 @@ final class ExerciseService {
         return groups
     }
 
+    public func getPracticeDescription(level: LevelType) -> URL? {
+        guard let resourcePath = Bundle.main.resourcePath else {
+            assertionFailure("failed to get bundle path")
+            return nil
+        }
+        let fileName = String(format: "ex_%d.html", level.rawValue)
+        let path = URL(fileURLWithPath:resourcePath).appendingPathComponent("assets/" + fileName)
+            .path
+        return URL(fileURLWithPath: path)
+    }
+
     private func loadExercises(from fileName: String, to map: inout [String: Exercise]) {
         guard let resourcePath = Bundle.main.resourcePath else {
             assertionFailure("failed to get bundle path")
