@@ -2,12 +2,12 @@ import UIKit
 
 /// Shows exercises.
 /// May be it's better to use tableview instead but I couldn't make it work with adjusted height.
-class ListViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class ListViewController: ZyqViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
     private let leftRightMargin: CGFloat = 12.0
 
     weak var listView: UICollectionView!
-
+    var level: LevelType = .unknown
     var exercises: [ExerciseGroup] = []
 
     override func loadView() {
@@ -45,7 +45,7 @@ class ListViewController: UIViewController, UICollectionViewDataSource, UICollec
             flowLayout.sectionInset = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
         }
     }
-
+    
     // MARK: UICollectionViewDataSource
 
     func collectionView(_ collectionView: UICollectionView,

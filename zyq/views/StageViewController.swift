@@ -4,9 +4,6 @@ import UIKit
 /// May be it's better to use tableview instead but I couldn't make it work with adjusted height.
 final class StageViewController: ListViewController {
 
-    private var descriptionUrl: URL?
-    private var level: LevelType = .unknown
-
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
@@ -36,21 +33,8 @@ final class StageViewController: ListViewController {
         level = aLevel
         exercises = self.exerciseService.buildExerciseGroups(level: level)
         descriptionUrl = exerciseService.getPracticeDescription(level: level)
-        if (descriptionUrl != nil) {
-            let helpButton = UIBarButtonItem(
-                image: UIImage(named: "help_icon")?.withRenderingMode(.alwaysOriginal),
-            style: .plain, target: self, action: #selector(showDescription))
-            navigationItem.rightBarButtonItem = helpButton
-        } else {
-            navigationItem.rightBarButtonItem = nil
-        }
+        initBarItems()
         self.listView.reloadData()
-    }
-
-    @objc private func showDescription() {
-        let descriptionViewController = DescriptionViewController()
-        descriptionViewController.url = descriptionUrl
-        self.navigationController?.pushViewController(descriptionViewController, animated: true)
     }
 
     // MARK: UICollectionViewDataSource

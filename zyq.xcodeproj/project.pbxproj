@@ -42,6 +42,8 @@
 		734BD60A2432B80E006E6A16 /* ExerciseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 734BD6062432B80E006E6A16 /* ExerciseViewController.xib */; };
 		734BD60C2432C11C006E6A16 /* images in Resources */ = {isa = PBXBuildFile; fileRef = 734BD60B2432C11B006E6A16 /* images */; };
 		734BD60D2432C11C006E6A16 /* images in Resources */ = {isa = PBXBuildFile; fileRef = 734BD60B2432C11B006E6A16 /* images */; };
+		734BD60F2432ECD8006E6A16 /* ZyqViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734BD60E2432ECD8006E6A16 /* ZyqViewController.swift */; };
+		734BD6102432ECD8006E6A16 /* ZyqViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734BD60E2432ECD8006E6A16 /* ZyqViewController.swift */; };
 		7355777B2429BFB0004016FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 735577772429BFB0004016FE /* LaunchScreen.storyboard */; };
 		7355777C2429BFB0004016FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 735577792429BFB0004016FE /* Main.storyboard */; };
 		7355777E2429BFD2004016FE /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7355777D2429BFD2004016FE /* HelpViewController.swift */; };
@@ -104,6 +106,7 @@
 		734BD6052432B80E006E6A16 /* ExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewController.swift; sourceTree = "<group>"; };
 		734BD6062432B80E006E6A16 /* ExerciseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExerciseViewController.xib; sourceTree = "<group>"; };
 		734BD60B2432C11B006E6A16 /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
+		734BD60E2432ECD8006E6A16 /* ZyqViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZyqViewController.swift; sourceTree = "<group>"; };
 		735577762429BACC004016FE /* FeaturesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturesService.swift; sourceTree = "<group>"; };
 		735577782429BFB0004016FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7355777A2429BFB0004016FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -219,6 +222,7 @@
 				734BD5FA24316B50006E6A16 /* DescriptionViewController.xib */,
 				734BD6052432B80E006E6A16 /* ExerciseViewController.swift */,
 				734BD6062432B80E006E6A16 /* ExerciseViewController.xib */,
+				734BD60E2432ECD8006E6A16 /* ZyqViewController.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -503,6 +507,7 @@
 				7355778B2429C1CA004016FE /* Utils.swift in Sources */,
 				734BD50E24301ABD006E6A16 /* ExerciseService.swift in Sources */,
 				735577892429C1B0004016FE /* UIColor+Utils.swift in Sources */,
+				734BD60F2432ECD8006E6A16 /* ZyqViewController.swift in Sources */,
 				7355779A242B12D5004016FE /* Errors.swift in Sources */,
 				7355777E2429BFD2004016FE /* HelpViewController.swift in Sources */,
 				734BD603243198AB006E6A16 /* ExerciseListViewController.swift in Sources */,
@@ -531,6 +536,7 @@
 				732B1DA5242D805C00F95598 /* CollectionViewCell.swift in Sources */,
 				734BD50F24301ABD006E6A16 /* ExerciseService.swift in Sources */,
 				735577832429C112004016FE /* HelpViewController.swift in Sources */,
+				734BD6102432ECD8006E6A16 /* ZyqViewController.swift in Sources */,
 				7355778C242AFA2E004016FE /* UIColor+Utils.swift in Sources */,
 				7355779B242B12D5004016FE /* Errors.swift in Sources */,
 				734BD604243198AB006E6A16 /* ExerciseListViewController.swift in Sources */,

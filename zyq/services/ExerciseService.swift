@@ -3,7 +3,7 @@ import SwiftyJSON
 
 final class ExerciseService {
 
-    private var exercisesMap: [String: Exercise] = [:]
+    private var exercises: [Exercise] = []
     private let jsonDecoder: JSONDecoder
 
     init(_ jsonDecoder: JSONDecoder) {
@@ -15,19 +15,15 @@ final class ExerciseService {
     }
 
     func load() {
-        exercisesMap.removeAll()
-        guard let preferredLanguage = Locale.preferredLanguages.first else {
-            assertionFailure("Failed to get locale")
-            return
-        }
-        if preferredLanguage.starts(with: "ru-") {
-            loadExercises(from: "exercises1.json", to: &exercisesMap)
-            loadExercises(from: "exercises2.json", to: &exercisesMap)
-            loadExercises(from: "exercises3.json", to: &exercisesMap)
+        exercises.removeAll()
+        if ExerciseService.isRu() {
+            loadExercises(from: "exercises1.json", to: &exercises)
+            loadExercises(from: "exercises2.json", to: &exercises)
+            loadExercises(from: "exercises3.json", to: &exercises)
         } else {
-            loadExercises(from: "exercises1_en.json", to: &exercisesMap)
-            loadExercises(from: "exercises2_en.json", to: &exercisesMap)
-            loadExercises(from: "exercises3_en.json", to: &exercisesMap)
+            loadExercises(from: "exercises1_en.json", to: &exercises)
+            loadExercises(from: "exercises2_en.json", to: &exercises)
+            loadExercises(from: "exercises3_en.json", to: &exercises)
         }
     }
 
@@ -49,8 +45,8 @@ final class ExerciseService {
     }
 
     public func getExercises(level: LevelType, type: ExerciseType) -> [Exercise] {
-        var exercises = [Exercise]()
-        for (_, ex) in exercisesMap {
+        var array = [Exercise]()
+        for ex in exercises {
             if (type != .unknown) {
                 if (ex.type != type) {
                     continue
@@ -59,23 +55,50 @@ final class ExerciseService {
             if (ex.level != level) {
                 continue
             }
-            exercises.append(ex)
+            array.append(ex)
         }
-        return exercises
+        return array
     }
 
     public func getPracticeDescription(level: LevelType) -> URL? {
+        return getPracticeDescription(level: level, type: .unknown)
+    }
+
+    public func getPracticeDescription(level: LevelType, type: ExerciseType) -> URL? {
+        return getPracticeDescription(level: level, type: .unknown, name: "")
+    }
+
+    public func getPracticeDescription(level: LevelType, type: ExerciseType, name: String) -> URL? {
+        let fileName = getPracticeFileName(level: level, type: type, name: name)
         guard let resourcePath = Bundle.main.resourcePath else {
             assertionFailure("failed to get bundle path")
             return nil
         }
-        let fileName = String(format: "ex_%d.html", level.rawValue)
+        guard Bundle.main.path(forResource: fileName, ofType: nil, inDirectory: "assets") != nil
+            else {
+             return nil
+        }
         let path = URL(fileURLWithPath:resourcePath).appendingPathComponent("assets/" + fileName)
             .path
         return URL(fileURLWithPath: path)
     }
 
-    private func loadExercises(from fileName: String, to map: inout [String: Exercise]) {
+    private func getPracticeFileName(level: LevelType, type: ExerciseType, name: String) -> String {
+        var fileName = String(format: "ex_%d", level.rawValue)
+        if (type != .unknown) {
+            fileName.append(String(format: "_%d", type.rawValue))
+        }
+        if (!name.isEmpty) {
+            fileName.append(String(format: "_%@", name))
+        }
+        if (!ExerciseService.isRu()) {
+            fileName.append("_en")
+        }
+        fileName.append(".html")
+        return fileName
+    }
+
+    private func loadExercises(from fileName: String, to array: inout [Exercise]) {
         guard let resourcePath = Bundle.main.resourcePath else {
             assertionFailure("failed to get bundle path")
             return
@@ -103,10 +126,18 @@ final class ExerciseService {
                     exJson["tags"].string ?? "",
                     exJson["detailsFileName"].string ?? ""
                 )
-                map[ex.id] = ex
+                array.append(ex)
             }
         } catch let error {
             assertionFailure("parse error: \(error.localizedDescription)")
         }
+    }
+
+    private static func isRu() -> Bool {
+        guard let preferredLanguage = Locale.preferredLanguages.first else {
+            assertionFailure("Failed to get locale")
+            return false
+        }
+        return preferredLanguage.starts(with: "ru-")
     }
 }
