@@ -1,4 +1,5 @@
 import Foundation
+import UIKit
 
 extension String {
     var localized: String {
@@ -18,6 +19,9 @@ extension String {
                 assertionFailure("Failed to get html for attributed string")
                 return nil
         }
+        let range : NSRange = NSMakeRange(0, html.length)
+        html.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 16.0),
+                          range: range)
         return html
     }
 }

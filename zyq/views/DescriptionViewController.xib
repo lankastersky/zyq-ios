@@ -19,9 +19,8 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ret-b3-h2s">
-                    <rect key="frame" x="0.0" y="0.0" width="424" height="896"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ret-b3-h2s">
+                    <rect key="frame" x="10" y="10" width="394" height="876"/>
                     <wkWebViewConfiguration key="configuration">
                         <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                         <wkPreferences key="preferences"/>
@@ -29,6 +28,12 @@
                 </wkWebView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Ret-b3-h2s" secondAttribute="bottom" constant="10" id="5UW-sL-I3o"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Ret-b3-h2s" secondAttribute="trailing" constant="10" id="bG7-uL-oxK"/>
+                <constraint firstItem="Ret-b3-h2s" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="nBx-kh-0Fm"/>
+                <constraint firstItem="Ret-b3-h2s" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="uZb-Xu-0XE"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="131.8840579710145" y="95.758928571428569"/>
         </view>
