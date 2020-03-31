@@ -28,5 +28,14 @@ class ExerciseListViewController: ListViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         assert(indexPath.item < exercises.count,
                "Bad index when creating collection view")
+
+        showExercise(indexPath: indexPath)
+    }
+
+    func showExercise(indexPath: IndexPath) {
+        let ex: Exercise = exercises[indexPath.item] as! Exercise
+        let viewController = ExerciseViewController()
+        viewController.exercise = ex
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
 }

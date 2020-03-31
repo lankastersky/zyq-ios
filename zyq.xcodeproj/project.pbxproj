@@ -36,6 +36,12 @@
 		734BD601243193B4006E6A16 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734BD5FF243193B4006E6A16 /* ListViewController.swift */; };
 		734BD603243198AB006E6A16 /* ExerciseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734BD602243198AB006E6A16 /* ExerciseListViewController.swift */; };
 		734BD604243198AB006E6A16 /* ExerciseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734BD602243198AB006E6A16 /* ExerciseListViewController.swift */; };
+		734BD6072432B80E006E6A16 /* ExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734BD6052432B80E006E6A16 /* ExerciseViewController.swift */; };
+		734BD6082432B80E006E6A16 /* ExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734BD6052432B80E006E6A16 /* ExerciseViewController.swift */; };
+		734BD6092432B80E006E6A16 /* ExerciseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 734BD6062432B80E006E6A16 /* ExerciseViewController.xib */; };
+		734BD60A2432B80E006E6A16 /* ExerciseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 734BD6062432B80E006E6A16 /* ExerciseViewController.xib */; };
+		734BD60C2432C11C006E6A16 /* images in Resources */ = {isa = PBXBuildFile; fileRef = 734BD60B2432C11B006E6A16 /* images */; };
+		734BD60D2432C11C006E6A16 /* images in Resources */ = {isa = PBXBuildFile; fileRef = 734BD60B2432C11B006E6A16 /* images */; };
 		7355777B2429BFB0004016FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 735577772429BFB0004016FE /* LaunchScreen.storyboard */; };
 		7355777C2429BFB0004016FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 735577792429BFB0004016FE /* Main.storyboard */; };
 		7355777E2429BFD2004016FE /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7355777D2429BFD2004016FE /* HelpViewController.swift */; };
@@ -95,6 +101,9 @@
 		734BD5FA24316B50006E6A16 /* DescriptionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DescriptionViewController.xib; sourceTree = "<group>"; };
 		734BD5FF243193B4006E6A16 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		734BD602243198AB006E6A16 /* ExerciseListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListViewController.swift; sourceTree = "<group>"; };
+		734BD6052432B80E006E6A16 /* ExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewController.swift; sourceTree = "<group>"; };
+		734BD6062432B80E006E6A16 /* ExerciseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExerciseViewController.xib; sourceTree = "<group>"; };
+		734BD60B2432C11B006E6A16 /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
 		735577762429BACC004016FE /* FeaturesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturesService.swift; sourceTree = "<group>"; };
 		735577782429BFB0004016FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7355777A2429BFB0004016FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -179,6 +188,7 @@
 		73CD82F720E463EA00FEF64D /* zyq */ = {
 			isa = PBXGroup;
 			children = (
+				734BD60B2432C11B006E6A16 /* images */,
 				734BD5F02430278A006E6A16 /* assets */,
 				734BD506243010F7006E6A16 /* zyq.entitlements */,
 				7337717C21111C7E004A58F8 /* Localizable.strings */,
@@ -207,6 +217,8 @@
 				735577792429BFB0004016FE /* Main.storyboard */,
 				734BD5F924316B50006E6A16 /* DescriptionViewController.swift */,
 				734BD5FA24316B50006E6A16 /* DescriptionViewController.xib */,
+				734BD6052432B80E006E6A16 /* ExerciseViewController.swift */,
+				734BD6062432B80E006E6A16 /* ExerciseViewController.xib */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -361,8 +373,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				734BD60C2432C11C006E6A16 /* images in Resources */,
 				734BD5FD24316B50006E6A16 /* DescriptionViewController.xib in Resources */,
 				732B1DA2242D765B00F95598 /* CollectionViewCell.xib in Resources */,
+				734BD6092432B80E006E6A16 /* ExerciseViewController.xib in Resources */,
 				7355777B2429BFB0004016FE /* LaunchScreen.storyboard in Resources */,
 				73CD830220E463ED00FEF64D /* Assets.xcassets in Resources */,
 				734BD5F12430278B006E6A16 /* assets in Resources */,
@@ -379,6 +393,8 @@
 				732B1DA4242D7FE300F95598 /* CollectionViewCell.xib in Resources */,
 				735577822429C110004016FE /* LaunchScreen.storyboard in Resources */,
 				734BD5FE24316B50006E6A16 /* DescriptionViewController.xib in Resources */,
+				734BD60D2432C11C006E6A16 /* images in Resources */,
+				734BD60A2432B80E006E6A16 /* ExerciseViewController.xib in Resources */,
 				7337717A21111C7E004A58F8 /* Localizable.strings in Resources */,
 				735577812429C10D004016FE /* Main.storyboard in Resources */,
 			);
@@ -475,6 +491,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				732B1DA3242D765B00F95598 /* CollectionViewCell.swift in Sources */,
+				734BD6072432B80E006E6A16 /* ExerciseViewController.swift in Sources */,
 				735577872429C16B004016FE /* StorageService.swift in Sources */,
 				735577852429C13D004016FE /* String+Utils.swift in Sources */,
 				73557797242B115B004016FE /* UIViewController+Utils.swift in Sources */,
@@ -502,6 +519,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7355778D242AFAC6004016FE /* StorageService.swift in Sources */,
+				734BD6082432B80E006E6A16 /* ExerciseViewController.swift in Sources */,
 				732B1DA6242D805F00F95598 /* StageViewController.swift in Sources */,
 				733771652100458C004A58F8 /* AppDelegate.swift in Sources */,
 				73557798242B115B004016FE /* UIViewController+Utils.swift in Sources */,

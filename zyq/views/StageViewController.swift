@@ -2,29 +2,10 @@ import UIKit
 
 /// Shows exercises groups for the given stage.
 /// May be it's better to use tableview instead but I couldn't make it work with adjusted height.
-final class StageViewController: UIViewController {
+final class StageViewController: ListViewController {
 
-    private let leftRightMargin: CGFloat = 12.0
-
-    @IBOutlet private var collectionView: UICollectionView!
-
-    private var exerciseGroups: [ExerciseGroup] = []
     private var descriptionUrl: URL?
-    private var selectedItem: Int?
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        collectionView?.register(
-            UINib(nibName: "StageCollectionViewCell", bundle: nil),
-            forCellWithReuseIdentifier: StageCollectionViewCell.stageCellReuseIdentifier
-        )
-        
-        // See https://goo.gl/yAUR1R
-        if let flowLayout = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
-                flowLayout.estimatedItemSize = CGSize(width: 1, height: 1)
-        }
-    }
+    private var level: LevelType = .unknown
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -49,10 +30,11 @@ final class StageViewController: UIViewController {
         default:
             break
         }
-        guard let level = LevelType(rawValue: stage + 1) else {
+        guard let aLevel = LevelType(rawValue: stage + 1) else {
             return
         }
-        exerciseGroups = self.exerciseService.buildExerciseGroups(level: level)
+        level = aLevel
+        exercises = self.exerciseService.buildExerciseGroups(level: level)
         descriptionUrl = exerciseService.getPracticeDescription(level: level)
         if (descriptionUrl != nil) {
             let helpButton = UIBarButtonItem(
@@ -62,7 +44,7 @@ final class StageViewController: UIViewController {
         } else {
             navigationItem.rightBarButtonItem = nil
         }
-        collectionView.reloadData()
+        self.listView.reloadData()
     }
 
     @objc private func showDescription() {
@@ -70,46 +52,24 @@ final class StageViewController: UIViewController {
         descriptionViewController.url = descriptionUrl
         self.navigationController?.pushViewController(descriptionViewController, animated: true)
     }
-}
 
-extension StageViewController: UICollectionViewDataSource {
+    // MARK: UICollectionViewDataSource
 
-    func collectionView(_ collectionView: UICollectionView,
-                        numberOfItemsInSection section: Int) -> Int {
+    // MARK: UICollectionViewDelegate
 
-        return exerciseGroups.count
-    }
-
-    func collectionView(_ collectionView: UICollectionView,
-                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    override func collectionView(
+        _ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        guard let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: StageCollectionViewCell.stageCellReuseIdentifier,
-            for: indexPath
-        ) as? StageCollectionViewCell else {
-            print("Failed to instantiate journal cell")
-            return UICollectionViewCell()
-        }
-
-        assert(indexPath.item < exerciseGroups.count,
+        assert(indexPath.item < exercises.count,
                "Bad challenge index when creating collection view")
-
-        let group: ExerciseGroup = exerciseGroups[indexPath.item]
-        cell.nameLabel.text = group.name
-        cell.showType(indexPath.item % 2 == 0)
-
-        cell.widthConstraint.constant = collectionView.frame.size.width - 2.0 * leftRightMargin
-        return cell
+        showExercises(indexPath: indexPath)
     }
-}
 
-extension StageViewController: UICollectionViewDelegate {
-
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        assert(indexPath.item < exerciseGroups.count,
-               "Bad challenge index when creating collection view")
-        selectedItem = indexPath.item
-        let group: ExerciseGroup = exerciseGroups[indexPath.item]
-        // todo: open group
+    func showExercises(indexPath: IndexPath) {
+        let ex: ExerciseGroup = exercises[indexPath.item]
+        let viewController = ExerciseListViewController()
+        viewController.level = level
+        viewController.exerciseType = ex.type
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
 }
