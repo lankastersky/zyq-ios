@@ -31,10 +31,14 @@ class ExerciseViewController: ZyqViewController {
         if (exercise!.videoUrl.isEmpty) {
             return
         }
-        let helpButton = UIBarButtonItem(
+        let videoButton = UIBarButtonItem(
             image: UIImage(named: "video_icon")?.withRenderingMode(.alwaysOriginal),
         style: .plain, target: self, action: #selector(showVideo))
-        navigationItem.rightBarButtonItems?.append(helpButton)
+        if (navigationItem.rightBarButtonItems == nil) {
+            navigationItem.rightBarButtonItem = videoButton
+        } else {
+            navigationItem.rightBarButtonItems?.append(videoButton)
+        }
     }
 
     private func showImage() {
