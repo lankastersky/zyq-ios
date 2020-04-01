@@ -11,6 +11,7 @@ class ExerciseViewController: ZyqViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationItem.largeTitleDisplayMode = .never
         navigationItem.title = exercise?.name
 
         descriptionLabel.attributedText = exercise?.description.htmlAttributedString()

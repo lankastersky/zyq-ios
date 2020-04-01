@@ -4,6 +4,10 @@ import UIKit
 /// May be it's better to use tableview instead but I couldn't make it work with adjusted height.
 final class StageViewController: ListViewController {
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
@@ -14,15 +18,19 @@ final class StageViewController: ListViewController {
         }
 
         let stage = tabBarController.selectedIndex;
+        var headerImage: UIImage?
         switch(stage) {
         case NavigationTab.stage1.rawValue:
             navigationItem.title = "stage1_screen_title".localized
+            headerImage = UIImage(named: "header_stage1")
             break
         case NavigationTab.stage2.rawValue:
             navigationItem.title = "stage2_screen_title".localized
+            headerImage = UIImage(named: "header_stage2")
             break
         case NavigationTab.stage3.rawValue:
             navigationItem.title = "stage3_screen_title".localized
+            headerImage = UIImage(named: "header_stage3")
             break
         default:
             break
@@ -34,6 +42,27 @@ final class StageViewController: ListViewController {
         exercises = self.exerciseService.buildExerciseGroups(level: level)
         descriptionUrl = exerciseService.getPracticeDescription(level: level)
         initBarItems()
+//        let resizedImage = headerImage!.resizableImage(withCapInsets:
+//            UIEdgeInsets(top: 0, left: 100, bottom: 0, right: 100), resizingMode: .stretch)
+//        self.navigationController?.navigationBar.barTintColor = UIColor(patternImage: headerImage!)
+
+        if #available(iOS 13.0, *) {
+            let appearance = UINavigationBarAppearance()
+            //appearance.backgroundColor = .purple
+            appearance.backgroundImage = headerImage
+            appearance.backgroundImageContentMode = UIView.ContentMode.scaleAspectFill
+            appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+            appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+
+            UINavigationBar.appearance().standardAppearance = appearance
+            UINavigationBar.appearance().compactAppearance = appearance
+            UINavigationBar.appearance().scrollEdgeAppearance = appearance
+        } else {
+            UINavigationBar.appearance().barTintColor = UIColor(patternImage: headerImage!)
+//            self.navigationController?.navigationBar.layer.contents = headerImage!.cgImage
+//            self.navigationController?.navigationBar.barTintColor =
+//                UIColor(patternImage: headerImage!)
+        }
         self.listView.reloadData()
     }
 
