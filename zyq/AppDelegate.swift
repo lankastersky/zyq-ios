@@ -2,11 +2,12 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegate {
 
     lazy var exerciseService = ExerciseService()
 
     var window: UIWindow?
+    private(set) var navigationTab : NavigationTab? = .stage1
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions:
@@ -19,6 +20,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         exerciseService.load()
         return true
     }
+
+    // MARK: UITabBarControllerDelegate
+
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController:
+        UIViewController) {
+        navigationTab = NavigationTab(rawValue: tabBarController.selectedIndex);
+    }
+    
 
     private func configureAppearance() {
         UITabBar.appearance().barTintColor = UIColor.skinColor
@@ -33,6 +42,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             assertionFailure("Failed to get tab bar controller")
             return
         }
+        tabBarController.delegate = self
+        
         let stage1TabBarItem = tabBarController.tabBar.items?[NavigationTab.stage1.rawValue]
         stage1TabBarItem?.title = "tab_bar_stage1_title".localized
         stage1TabBarItem?.image = UIImage(named: "baseline_help_black_24pt")
