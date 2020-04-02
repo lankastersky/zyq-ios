@@ -13,7 +13,7 @@ final class CollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        typeLabel.textColor = UIColor.darkSkinColor
+        //typeLabel.textColor = UIColor.darkSkinColor
 
         // See https://github.com/larrylegend/CollectionViewAutoSizingTest
         contentView.translatesAutoresizingMaskIntoConstraints = false

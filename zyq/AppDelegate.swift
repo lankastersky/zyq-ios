@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
 
     private func configureAppearance() {
         UITabBar.appearance().barTintColor = UIColor.skinColor
-        UITabBar.appearance().tintColor = UIColor.white
+        UITabBar.appearance().tintColor = UIColor.black
         UINavigationBar.appearance().barTintColor = UIColor.skinColor
         UINavigationBar.appearance().tintColor = UIColor.white
         UINavigationBar.appearance().barStyle = .black
@@ -42,21 +42,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
             return
         }
         tabBarController.delegate = self
-        
+
+        let image1 = UIImage(named: "red_ball")?.withRenderingMode(.alwaysOriginal)
+        let image1dis = UIImage(named: "red_ball_dis")?.withRenderingMode(.alwaysOriginal)
         let stage1TabBarItem = tabBarController.tabBar.items?[NavigationTab.stage1.rawValue]
         stage1TabBarItem?.title = "tab_bar_stage1_title".localized
-        stage1TabBarItem?.image = UIImage(named: "baseline_help_black_24pt")
-        stage1TabBarItem?.selectedImage = UIImage(named: "baseline_help_black_24pt")
+        stage1TabBarItem?.image = image1dis
+        stage1TabBarItem?.selectedImage = image1
 
+        let image2 = UIImage(named: "yellow_ball")?.withRenderingMode(.alwaysOriginal)
+        let image2dis = UIImage(named: "yellow_ball_dis")?.withRenderingMode(.alwaysOriginal)
         let stage2TabBarItem = tabBarController.tabBar.items?[NavigationTab.stage2.rawValue]
         stage2TabBarItem?.title = "tab_bar_stage2_title".localized
-        stage2TabBarItem?.image = UIImage(named: "baseline_help_black_24pt")
-        stage2TabBarItem?.selectedImage = UIImage(named: "baseline_help_black_24pt")
+        stage2TabBarItem?.image = image2dis
+        stage2TabBarItem?.selectedImage = image2
 
+        let image3dis = UIImage(named: "green_ball_dis")?.withRenderingMode(.alwaysOriginal)
+        let image3 = UIImage(named: "green_ball")?.withRenderingMode(.alwaysOriginal)
         let stage3TabBarItem = tabBarController.tabBar.items?[NavigationTab.stage3.rawValue]
         stage3TabBarItem?.title = "tab_bar_stage3_title".localized
-        stage3TabBarItem?.image = UIImage(named: "baseline_help_black_24pt")
-        stage3TabBarItem?.selectedImage = UIImage(named: "baseline_help_black_24pt")
+        stage3TabBarItem?.image = image3dis
+        stage3TabBarItem?.selectedImage = image3
 
         let helpTabBarItem = tabBarController.tabBar.items?[NavigationTab.help.rawValue]
         helpTabBarItem?.title = "tab_bar_help_title".localized
