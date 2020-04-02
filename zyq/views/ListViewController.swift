@@ -83,6 +83,7 @@ class ListViewController: ZyqViewController, UICollectionViewDataSource, UIColle
         let ex: ExerciseGroup = exercises[indexPath.item] as ExerciseGroup
         cell.nameLabel.text = ex.name
         cell.showType(false)
+        cell.applyShadows()
     }
     
     // MARK: UICollectionViewDelegate

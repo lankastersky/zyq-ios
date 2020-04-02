@@ -71,7 +71,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="g6O-b4-Kcq" firstAttribute="top" secondItem="SZn-oX-rX3" secondAttribute="bottom" id="M9h-XA-EA6"/>
                             <constraint firstItem="6fE-8d-gPD" firstAttribute="top" secondItem="g6O-b4-Kcq" secondAttribute="bottom" id="ONO-X8-GNy"/>
