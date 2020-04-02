@@ -45,7 +45,12 @@ class ListViewController: ZyqViewController, UICollectionViewDataSource, UIColle
             flowLayout.sectionInset = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
         }
     }
-    
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupNavigationBarAppearance(level: level)
+    }
+
     // MARK: UICollectionViewDataSource
 
     func collectionView(_ collectionView: UICollectionView,

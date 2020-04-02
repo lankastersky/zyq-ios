@@ -27,7 +27,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
         UIViewController) {
         navigationTab = NavigationTab(rawValue: tabBarController.selectedIndex);
     }
-    
 
     private func configureAppearance() {
         UITabBar.appearance().barTintColor = UIColor.skinColor

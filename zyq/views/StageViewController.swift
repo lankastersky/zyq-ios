@@ -32,11 +32,6 @@ final class StageViewController: ListViewController {
         self.listView.reloadData()
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        setupNavigationBarAppearance()
-    }
-
     // MARK: UICollectionViewDataSource
 
     // MARK: UICollectionViewDelegate
@@ -55,44 +50,5 @@ final class StageViewController: ListViewController {
         viewController.level = level
         viewController.exerciseType = ex.type
         self.navigationController?.pushViewController(viewController, animated: true)
-    }
-
-    private func setupNavigationBarAppearance() {
-        var headerImage: UIImage?
-        switch(level) {
-        case .first:
-            headerImage = UIImage(named: "header_stage1")
-            break
-        case .second:
-            headerImage = UIImage(named: "header_stage2")
-            break
-        case .third:
-            headerImage = UIImage(named: "header_stage3")
-            break
-        default:
-            break
-        }
-
-//        let resizedImage = headerImage!.resizableImage(withCapInsets:
-//            UIEdgeInsets(top: 0, left: 100, bottom: 0, right: 100), resizingMode: .stretch)
-//        self.navigationController?.navigationBar.barTintColor = UIColor(patternImage: headerImage!)
-
-        if #available(iOS 13.0, *) {
-            let appearance = UINavigationBarAppearance()
-            //appearance.backgroundColor = .purple
-            appearance.backgroundImage = headerImage
-            appearance.backgroundImageContentMode = UIView.ContentMode.scaleAspectFill
-            appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
-            appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-
-            UINavigationBar.appearance().standardAppearance = appearance
-            UINavigationBar.appearance().compactAppearance = appearance
-            UINavigationBar.appearance().scrollEdgeAppearance = appearance
-        } else {
-//            UINavigationBar.appearance().barTintColor = UIColor(patternImage: headerImage!)
-//            self.navigationController?.navigationBar.layer.contents = headerImage!.cgImage
-            self.navigationController?.navigationBar.barTintColor =
-                UIColor(patternImage: headerImage!)
-        }
     }
 }

@@ -27,6 +27,11 @@ class ExerciseViewController: ZyqViewController {
         initBarItems()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupNavigationBarAppearance(level: exercise!.level)
+    }
+
     override func initBarItems() {
         super.initBarItems()
         if (exercise!.videoUrl.isEmpty) {
