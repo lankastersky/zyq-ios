@@ -29,8 +29,14 @@ class ZyqViewController: UIViewController {
             let appearance = UINavigationBarAppearance()
             appearance.backgroundImage = headerImage
             appearance.backgroundImageContentMode = UIView.ContentMode.scaleAspectFill
-            appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
-            appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+            appearance.titleTextAttributes = [
+                .foregroundColor: UIColor.white,
+                .font: UIFont(name: "Papyrus", size: 20) ??
+                UIFont.systemFont(ofSize: 20)]
+            appearance.largeTitleTextAttributes = [
+                .foregroundColor: UIColor.white,
+                .font: UIFont(name: "Papyrus", size: 30) ??
+                    UIFont.systemFont(ofSize: 30)]
 
             navbar?.standardAppearance = appearance
             navbar?.compactAppearance = appearance
@@ -38,6 +44,12 @@ class ZyqViewController: UIViewController {
 //            navbar?.layer.contents = headerImage!.cgImage
         } else {
             navbar?.barTintColor = UIColor(patternImage: headerImage!)
+            navbar?.titleTextAttributes = [
+                NSAttributedString.Key.font: UIFont(name: "Papyrus", size: 20) ??
+                    UIFont.systemFont(ofSize: 20)]
+            navbar?.largeTitleTextAttributes = [
+                NSAttributedString.Key.font: UIFont(name: "Papyrus", size: 30) ??
+                    UIFont.systemFont(ofSize: 30)]
         }
     }
 
