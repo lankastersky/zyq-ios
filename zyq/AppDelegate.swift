@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
     private func configureAppearance() {
         UITabBar.appearance().barTintColor = UIColor.skinColor
         UITabBar.appearance().tintColor = UIColor.black
-        UINavigationBar.appearance().barTintColor = UIColor.skinColor
+        UINavigationBar.appearance().barTintColor = UIColor.darkSkinColor
         UINavigationBar.appearance().tintColor = UIColor.white
         UINavigationBar.appearance().barStyle = .black
     }

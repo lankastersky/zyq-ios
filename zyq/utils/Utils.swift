@@ -1,4 +1,3 @@
-import Foundation
 import UIKit
 
 final class Utils {
@@ -20,5 +19,13 @@ final class Utils {
                                       preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default))
         return alert
+    }
+
+    static func isRu() -> Bool {
+        guard let preferredLanguage = Locale.preferredLanguages.first else {
+            assertionFailure("Failed to get locale")
+            return false
+        }
+        return preferredLanguage.starts(with: "ru-")
     }
 }

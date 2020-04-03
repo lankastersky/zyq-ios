@@ -1,15 +1,16 @@
 import UIKit
 import WebKit
 
-class DescriptionViewController: UIViewController {
+class WebViewController: UIViewController {
 
     var url: URL?
+    var titleString: String?
     @IBOutlet private weak var webView: WKWebView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.title = "description_title".localized
+        navigationItem.title = titleString
 
         guard let requestUrl = url else {
             assertionFailure("Failed to load url")

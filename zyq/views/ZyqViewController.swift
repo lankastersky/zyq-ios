@@ -24,26 +24,7 @@ class ZyqViewController: UIViewController {
 //            UIEdgeInsets(top: 0, left: 100, bottom: 0, right: 100), resizingMode: .stretch)
 //        self.navigationController?.navigationBar.barTintColor = UIColor(patternImage: headerImage!)
 
-        let navbar = self.navigationController?.navigationBar
-        let titleFont = UIFont(name: "Papyrus", size: 20) ?? UIFont.systemFont(ofSize: 20)
-        let largeTitleFont = UIFont(name: "Papyrus", size: 30) ?? UIFont.systemFont(ofSize: 30)
-        if #available(iOS 13.0, *) {
-            let appearance = UINavigationBarAppearance()
-            appearance.backgroundImage = headerImage
-            appearance.backgroundImageContentMode = UIView.ContentMode.scaleAspectFill
-            appearance.titleTextAttributes = [.foregroundColor: UIColor.white, .font: titleFont]
-            appearance.largeTitleTextAttributes = [
-                .foregroundColor: UIColor.white, .font: largeTitleFont]
-
-            navbar?.standardAppearance = appearance
-            navbar?.compactAppearance = appearance
-            navbar?.scrollEdgeAppearance = appearance
-//            navbar?.layer.contents = headerImage!.cgImage
-        } else {
-            navbar?.barTintColor = UIColor(patternImage: headerImage!)
-            navbar?.titleTextAttributes = [NSAttributedString.Key.font: titleFont]
-            navbar?.largeTitleTextAttributes = [NSAttributedString.Key.font:largeTitleFont]
-        }
+        self.navigationController?.navigationBar.setupTitleAppearance(headerImage: headerImage!)
     }
 
     func initBarItems() {
@@ -58,8 +39,9 @@ class ZyqViewController: UIViewController {
     }
 
     @objc func showDescription() {
-        let descriptionViewController = DescriptionViewController()
+        let descriptionViewController = WebViewController()
         descriptionViewController.url = descriptionUrl
+        descriptionViewController.titleString = "description_title".localized
         self.navigationController?.pushViewController(descriptionViewController, animated: true)
     }
 }

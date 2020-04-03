@@ -2,25 +2,34 @@ import MessageUI
 import UIKit
 
 /// Shows help screen
-final class HelpViewController: UIViewController {
+final class HelpViewController: WebViewController {
 
-    @IBOutlet weak private var descriptionLabel: UILabel!
-    @IBOutlet weak private var versionLabel: UILabel!
-    @IBOutlet weak private var sendFeedbackButton: UIButton!
+    override func loadView() {
+        super.loadView()
+        titleString = "help_screen_title".localized
+        let fileName = Utils.isRu() ? "help.html" : "help_en.html"
+        url = exerciseService.getAssetsUrl(fileName: fileName)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.title = "help_screen_title".localized
-        sendFeedbackButton.setTitle("help_screen_send_feedback".localized, for: .normal)
-        sendFeedbackButton.setTitleColor(UIColor.darkSkinColor, for: .normal)
-        descriptionLabel.text = "help_screen_description".localized
-        versionLabel.text =
-            String.localizedStringWithFormat("help_screen_version".localized, Utils.versionNumber)
-        versionLabel.textColor = UIColor.disabledSkinColor
+        let feedbackButton = UIBarButtonItem(
+            image: UIImage(named: "feedback_icon")?.withRenderingMode(.alwaysOriginal),
+        style: .plain, target: self, action: #selector(sendFeedback))
+        navigationItem.rightBarButtonItem = feedbackButton
+
+//        versionLabel.text =
+//            String.localizedStringWithFormat("help_screen_version".localized, Utils.versionNumber)
     }
 
-    @IBAction private func sendFeedback(sender: UIButton!) {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.setupTitleFontAppearance()
+        self.navigationController?.navigationBar.setupTitleColorAppearance(UIColor.darkSkinColor)
+    }
+
+    @objc private func sendFeedback(sender: UIButton!) {
         if MFMailComposeViewController.canSendMail() {
             let mail = MFMailComposeViewController()
             mail.mailComposeDelegate = self

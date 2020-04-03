@@ -1,7 +1,21 @@
+"tab_bar_stage1_title" = "Ступень I";
+"tab_bar_stage2_title" = "Ступень II";
+"tab_bar_stage3_title" = "Ступень III";
+"tab_bar_help_title" = "Справка";
 
-"tab_bar_help_title" = "Помощь";
+"stage1_screen_title" = "Ступень I";
+"stage2_screen_title" = "Ступень II";
+"stage3_screen_title" = "Ступень III";
 
-"help_screen_title" = "Помощь";
+"description_title" = "Описание";
+
+"ex_group_warmup" = "Подготовительные упражнения";
+"ex_group_main" = "Основные упражнения";
+"ex_group_supporting" = "Вспомогательные упражнения";
+"ex_group_closing" = "Заключительные упражнения";
+"ex_group_treatment" = "Диагностика и лечение";
+
+"help_screen_title" = "О программе";
 "help_screen_send_feedback" = "Связаться с автором";
 "help_screen_send_feedback_alert_title" = "Не удалось связаться с автором";
 "help_screen_send_feedback_alert_text" = "Пожалуйста убедитесь, что у вас настроено приложение для отправки почты";

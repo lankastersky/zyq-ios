@@ -2,18 +2,11 @@
 "tab_bar_stage1_title" = "Stage I";
 "tab_bar_stage2_title" = "Stage II";
 "tab_bar_stage3_title" = "Stage III";
-"tab_bar_help_title" = "Help";
+"tab_bar_help_title" = "About";
 
 "stage1_screen_title" = "Stage I";
 "stage2_screen_title" = "Stage II";
 "stage3_screen_title" = "Stage III";
-
-"help_screen_title" = "Help";
-"help_screen_send_feedback" = "Send Feedback";
-"help_screen_send_feedback_alert_title" = "Failed to Send Feedback";
-"help_screen_send_feedback_alert_text" = "Please check that you have a configured email app";
-"help_screen_description" = "todo";
-"help_screen_version" = "Lankastersky Studio\nVersion %@";
 
 "description_title" = "Description";
 
@@ -22,3 +15,11 @@
 "ex_group_supporting" = "Supporting exercises";
 "ex_group_closing" = "Closing exercises";
 "ex_group_treatment" = "Diagnosis and treatment";
+
+"help_screen_title" = "About";
+"help_screen_send_feedback" = "Send Feedback";
+"help_screen_send_feedback_alert_title" = "Failed to Send Feedback";
+"help_screen_send_feedback_alert_text" = "Please check that you have a configured email app";
+"help_screen_description" = "todo";
+"help_screen_version" = "Lankastersky Studio\nVersion %@";
+

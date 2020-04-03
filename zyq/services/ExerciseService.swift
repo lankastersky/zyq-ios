@@ -16,7 +16,7 @@ final class ExerciseService {
 
     func load() {
         exercises.removeAll()
-        if ExerciseService.isRu() {
+        if Utils.isRu() {
             loadExercises(from: "exercises1.json", to: &exercises)
             loadExercises(from: "exercises2.json", to: &exercises)
             loadExercises(from: "exercises3.json", to: &exercises)
@@ -70,6 +70,10 @@ final class ExerciseService {
 
     public func getPracticeDescription(level: LevelType, type: ExerciseType, name: String) -> URL? {
         let fileName = getPracticeFileName(level: level, type: type, name: name)
+        return getAssetsUrl(fileName: fileName)
+    }
+
+    public func getAssetsUrl(fileName: String) -> URL? {
         guard let resourcePath = Bundle.main.resourcePath else {
             assertionFailure("failed to get bundle path")
             return nil
@@ -91,7 +95,7 @@ final class ExerciseService {
         if (!name.isEmpty) {
             fileName.append(String(format: "_%@", name))
         }
-        if (!ExerciseService.isRu()) {
+        if (!Utils.isRu()) {
             fileName.append("_en")
         }
         fileName.append(".html")
@@ -131,13 +135,5 @@ final class ExerciseService {
         } catch let error {
             assertionFailure("parse error: \(error.localizedDescription)")
         }
-    }
-
-    private static func isRu() -> Bool {
-        guard let preferredLanguage = Locale.preferredLanguages.first else {
-            assertionFailure("Failed to get locale")
-            return false
-        }
-        return preferredLanguage.starts(with: "ru-")
     }
 }
