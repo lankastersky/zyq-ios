@@ -67,6 +67,8 @@
 		7355779D242C4D46004016FE /* NavigationTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7355779C242C4D46004016FE /* NavigationTab.swift */; };
 		7355779E242C4D46004016FE /* NavigationTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7355779C242C4D46004016FE /* NavigationTab.swift */; };
 		73567BB82436DB320011B915 /* UINavigationBar+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73567BB72436DB320011B915 /* UINavigationBar+Utils.swift */; };
+		73567BBC24390F490011B915 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 73567BBF24390F490011B915 /* InfoPlist.strings */; };
+		73567BBD24390F490011B915 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 73567BBF24390F490011B915 /* InfoPlist.strings */; };
 		73CD82F920E463EA00FEF64D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CD82F820E463EA00FEF64D /* AppDelegate.swift */; };
 		73CD830220E463ED00FEF64D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73CD830120E463ED00FEF64D /* Assets.xcassets */; };
 		98CD97F6F290D6E78DCD2C49 /* Pods_zyq.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A471F31B75F0A78B09DECB7B /* Pods_zyq.framework */; };
@@ -120,7 +122,9 @@
 		73557799242B12D5004016FE /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		7355779C242C4D46004016FE /* NavigationTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTab.swift; sourceTree = "<group>"; };
 		73567BB72436DB320011B915 /* UINavigationBar+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Utils.swift"; sourceTree = "<group>"; };
-		73CD82F520E463EA00FEF64D /* zyq.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = zyq.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		73567BBE24390F490011B915 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		73567BC024390F530011B915 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		73CD82F520E463EA00FEF64D /* ZYQ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZYQ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73CD82F820E463EA00FEF64D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		73CD830120E463ED00FEF64D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		73CD830620E463EE00FEF64D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -173,6 +177,7 @@
 		73CD82EC20E463EA00FEF64D = {
 			isa = PBXGroup;
 			children = (
+				73567BBF24390F490011B915 /* InfoPlist.strings */,
 				73CD82F720E463EA00FEF64D /* zyq */,
 				73E4CEA9210041190016D41E /* zyqTests */,
 				73CD82F620E463EA00FEF64D /* Products */,
@@ -184,7 +189,7 @@
 		73CD82F620E463EA00FEF64D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				73CD82F520E463EA00FEF64D /* zyq.app */,
+				73CD82F520E463EA00FEF64D /* ZYQ.app */,
 				73CD830B20E463EE00FEF64D /* zyqTests.xctest */,
 			);
 			name = Products;
@@ -312,7 +317,7 @@
 			);
 			name = zyq;
 			productName = zen;
-			productReference = 73CD82F520E463EA00FEF64D /* zyq.app */;
+			productReference = 73CD82F520E463EA00FEF64D /* ZYQ.app */;
 			productType = "com.apple.product-type.application";
 		};
 		73CD830A20E463EE00FEF64D /* zyqTests */ = {
@@ -389,6 +394,7 @@
 				734BD5F12430278B006E6A16 /* assets in Resources */,
 				7337717921111C7E004A58F8 /* Localizable.strings in Resources */,
 				7355777C2429BFB0004016FE /* Main.storyboard in Resources */,
+				73567BBC24390F490011B915 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +409,7 @@
 				734BD60D2432C11C006E6A16 /* images in Resources */,
 				734BD60A2432B80E006E6A16 /* ExerciseViewController.xib in Resources */,
 				7337717A21111C7E004A58F8 /* Localizable.strings in Resources */,
+				73567BBD24390F490011B915 /* InfoPlist.strings in Resources */,
 				735577812429C10D004016FE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -588,6 +595,15 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
+		73567BBF24390F490011B915 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				73567BBE24390F490011B915 /* en */,
+				73567BC024390F530011B915 /* ru */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -715,6 +731,7 @@
 				CODE_SIGN_ENTITLEMENTS = zyq/zyq.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = URX5QAH68L;
 				INFOPLIST_FILE = "$(SRCROOT)/zyq/Info.plist";
@@ -723,9 +740,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.1.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-D\" \"DEBUG_TIME\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hypercyclone.zyq;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ZYQ;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -740,6 +758,7 @@
 				CODE_SIGN_ENTITLEMENTS = zyq/zyq.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = URX5QAH68L;
 				INFOPLIST_FILE = "$(SRCROOT)/zyq/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -747,8 +766,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hypercyclone.zyq;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ZYQ;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
