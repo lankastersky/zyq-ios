@@ -17,8 +17,7 @@ class AudioViewController: ListViewController {
 
     private var player : AVQueuePlayer?
     private var playerLooper: AVPlayerLooper?
-    // Key-value observing context
-    private var playerItemContext = 0
+    private var timeObserverToken: Any?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -132,13 +131,6 @@ class AudioViewController: ListViewController {
 
         player = AVQueuePlayer()
         let playerItem = AVPlayerItem.init(url: url)
-
-        // Register as an observer of the player item's status property
-//        playerItem.addObserver(self,
-//                               forKeyPath: #keyPath(AVPlayerItem.status),
-//                               options: [.old, .new],
-//                               context: &playerItemContext)
-
         playerLooper = AVPlayerLooper(player: player!, templateItem: playerItem)
 
         self.player?.insert(playerItem, after: nil)
@@ -148,45 +140,7 @@ class AudioViewController: ListViewController {
         indicator?.startAnimating()
     }
 
-//    override func observeValue(forKeyPath keyPath: String?,
-//                               of object: Any?,
-//                               change: [NSKeyValueChangeKey : Any]?,
-//                               context: UnsafeMutableRawPointer?) {
-//
-//        // Only handle observations for the playerItemContext
-//        guard context == &playerItemContext else {
-//            super.observeValue(forKeyPath: keyPath,
-//                               of: object,
-//                               change: change,
-//                               context: context)
-//            return
-//        }
-//
-//        if keyPath == #keyPath(AVPlayerItem.status) {
-//            let status: AVPlayerItem.Status
-//            if let statusNumber = change?[.newKey] as? NSNumber {
-//                status = AVPlayerItem.Status(rawValue: statusNumber.intValue)!
-//            } else {
-//                status = .unknown
-//            }
-//
-//            // Switch over status value
-//            switch status {
-//            case .readyToPlay: break
-//                // Player item is ready to play.
-//            case .failed: break
-//                // Player item failed. See error.
-//            case .unknown: break
-//                // Player item is not yet ready.
-//            @unknown default:
-//                fatalError()
-//            }
-//        }
-//    }
-
-    var timeObserverToken: Any?
-
-    func addPeriodicTimeObserver() {
+    private func addPeriodicTimeObserver() {
         // Invoke callback every half second
         let interval = CMTime(seconds: 0.5,
                               preferredTimescale: CMTimeScale(NSEC_PER_SEC))
@@ -194,20 +148,14 @@ class AudioViewController: ListViewController {
         timeObserverToken =
             player?.addPeriodicTimeObserver(forInterval: interval, queue: .main) {
                 [weak self] time in
-                // update player transport UI
-//                if let currentItem = self?.player?.currentItem {
-//                    let duration = currentItem.asset.duration
-//                    if time == duration {
-//                        self?.player?.seek(to: CMTime.zero)
-//                    }
-//                }
                 if time == CMTime.zero && self?.player?.timeControlStatus == .playing {
                     self?.indicator?.stopAnimating()
                     self?.removePeriodicTimeObserver()
                 }
         }
     }
-    func removePeriodicTimeObserver() {
+
+    private func removePeriodicTimeObserver() {
         // If a time observer exists, remove it
         if let token = timeObserverToken {
             player?.removeTimeObserver(token)

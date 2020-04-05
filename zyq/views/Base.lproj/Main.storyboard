@@ -158,7 +158,7 @@
         <scene sceneID="b0v-dN-FQF">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="00c-hZ-TiQ" userLabel="Player" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Audio" image="airplayaudio" catalog="system" id="YU6-wo-Tbp" userLabel="Player"/>
+                    <tabBarItem key="tabBarItem" title="Audio" id="YU6-wo-Tbp" userLabel="Player"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4A3-yd-PlF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -194,7 +194,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="airplayaudio" catalog="system" width="64" height="60"/>
         <image name="baseline_help_black_24pt" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
