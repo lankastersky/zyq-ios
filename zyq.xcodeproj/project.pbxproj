@@ -69,6 +69,8 @@
 		73567BB82436DB320011B915 /* UINavigationBar+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73567BB72436DB320011B915 /* UINavigationBar+Utils.swift */; };
 		73567BBC24390F490011B915 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 73567BBF24390F490011B915 /* InfoPlist.strings */; };
 		73567BBD24390F490011B915 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 73567BBF24390F490011B915 /* InfoPlist.strings */; };
+		73567BC224392D480011B915 /* AudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73567BC124392B0F0011B915 /* AudioViewController.swift */; };
+		73567BC324392D480011B915 /* AudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73567BC124392B0F0011B915 /* AudioViewController.swift */; };
 		73CD82F920E463EA00FEF64D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CD82F820E463EA00FEF64D /* AppDelegate.swift */; };
 		73CD830220E463ED00FEF64D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73CD830120E463ED00FEF64D /* Assets.xcassets */; };
 		98CD97F6F290D6E78DCD2C49 /* Pods_zyq.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A471F31B75F0A78B09DECB7B /* Pods_zyq.framework */; };
@@ -124,6 +126,7 @@
 		73567BB72436DB320011B915 /* UINavigationBar+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Utils.swift"; sourceTree = "<group>"; };
 		73567BBE24390F490011B915 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		73567BC024390F530011B915 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		73567BC124392B0F0011B915 /* AudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioViewController.swift; sourceTree = "<group>"; };
 		73CD82F520E463EA00FEF64D /* ZYQ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZYQ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73CD82F820E463EA00FEF64D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		73CD830120E463ED00FEF64D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -217,6 +220,7 @@
 		73CD832820E4752A00FEF64D /* views */ = {
 			isa = PBXGroup;
 			children = (
+				73567BC124392B0F0011B915 /* AudioViewController.swift */,
 				734BD5FF243193B4006E6A16 /* ListViewController.swift */,
 				734BD602243198AB006E6A16 /* ExerciseListViewController.swift */,
 				732B1DA0242D765B00F95598 /* CollectionViewCell.swift */,
@@ -509,6 +513,7 @@
 				735577872429C16B004016FE /* StorageService.swift in Sources */,
 				735577852429C13D004016FE /* String+Utils.swift in Sources */,
 				73557797242B115B004016FE /* UIViewController+Utils.swift in Sources */,
+				73567BC224392D480011B915 /* AudioViewController.swift in Sources */,
 				7355779D242C4D46004016FE /* NavigationTab.swift in Sources */,
 				734BD5F7243049A4006E6A16 /* LevelType.swift in Sources */,
 				734BD50B24301A47006E6A16 /* ExerciseGroup.swift in Sources */,
@@ -552,6 +557,7 @@
 				7355779B242B12D5004016FE /* Errors.swift in Sources */,
 				734BD604243198AB006E6A16 /* ExerciseListViewController.swift in Sources */,
 				7355778F242AFACF004016FE /* String+Utils.swift in Sources */,
+				73567BC324392D480011B915 /* AudioViewController.swift in Sources */,
 				734BD5FC24316B50006E6A16 /* WebViewController.swift in Sources */,
 				7355778E242AFACA004016FE /* Utils.swift in Sources */,
 				734BD601243193B4006E6A16 /* ListViewController.swift in Sources */,

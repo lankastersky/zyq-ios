@@ -1,6 +1,7 @@
 "tab_bar_stage1_title" = "Stage I";
 "tab_bar_stage2_title" = "Stage II";
 "tab_bar_stage3_title" = "Stage III";
+"tab_bar_audio_title" = "Audio";
 "tab_bar_help_title" = "About";
 
 "stage1_screen_title" = "Stage I";
@@ -15,6 +16,8 @@
 "ex_group_closing" = "Closing exercises";
 "ex_group_treatment" = "Diagnosis and treatment";
 
+"audio_screen_title" = "Audio";
+
 "help_screen_title" = "About";
 "help_screen_send_feedback" = "Send Feedback";
 "help_screen_send_feedback_alert_title" = "Failed to Send Feedback";
@@ -22,3 +25,11 @@
 "help_screen_description" = "todo";
 "help_screen_version" = "Lankastersky Studio\nVersion %@";
 
+"song_3_Feng_Shui_60" = "Feng Shui (60 min.)";
+"song_4_Garmonic_72" = "Garmonic (72 min.)";
+"song_5_Gong_Yi_63" = "Gong Yi (63 min.)";
+"song_2_Himalaya_50" = "Himalaya (50 min.)";
+"song_8_Tai_Chi_61" = "Tai Chi (61 min.)";
+"song_6_Tibetian_Bowls_66" = "Tibetian_Bowls (66 min.)";
+"song_7_Big_Tree_44" = "Big tree (45 min.)";
+"song_1_Yan_Qi_73" = "Yan Qi (73 min.)";

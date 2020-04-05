@@ -64,6 +64,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
         stage3TabBarItem?.image = image3dis
         stage3TabBarItem?.selectedImage = image3
 
+        let audioTabBarItem = tabBarController.tabBar.items?[NavigationTab.audio.rawValue]
+        audioTabBarItem?.title = "tab_bar_audio_title".localized
+        audioTabBarItem?.image = UIImage(named: "music_icon")
+        audioTabBarItem?.selectedImage = UIImage(named: "music_icon")
+
         let helpTabBarItem = tabBarController.tabBar.items?[NavigationTab.help.rawValue]
         helpTabBarItem?.title = "tab_bar_help_title".localized
         helpTabBarItem?.image = UIImage(named: "baseline_help_black_24pt")

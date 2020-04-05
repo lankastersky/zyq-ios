@@ -4,7 +4,7 @@ import UIKit
 /// May be it's better to use tableview instead but I couldn't make it work with adjusted height.
 class ListViewController: ZyqViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
-    private let leftRightMargin: CGFloat = 12.0
+    let leftRightMargin: CGFloat = 12.0
 
     weak var listView: UICollectionView!
     var level: LevelType = .unknown
@@ -89,7 +89,14 @@ class ListViewController: ZyqViewController, UICollectionViewDataSource, UIColle
     // MARK: UICollectionViewDelegate
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        assert(indexPath.item < exercises.count,
-               "Bad index when creating collection view")
+        if let cell = collectionView.cellForItem(at: indexPath) as? CollectionViewCell {
+            cell.contentView.backgroundColor = UIColor.lightGray
+        }
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        if let cell = collectionView.cellForItem(at: indexPath) as? CollectionViewCell {
+            cell.contentView.backgroundColor = UIColor.white
+        }
     }
 }

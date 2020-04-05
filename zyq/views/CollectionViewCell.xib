@@ -9,7 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="0bP-XB-Aue" customClass="CollectionViewCell" customModule="zyq" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="0bP-XB-Aue" customClass="CollectionViewCell" customModule="ZYQ" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="400" height="118"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -35,7 +35,7 @@ type</string>
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="wAx-Qj-hiI" firstAttribute="top" secondItem="XVk-Zu-RkX" secondAttribute="bottom" constant="10" id="Cd9-qG-Iu8"/>
                             <constraint firstItem="XVk-Zu-RkX" firstAttribute="top" secondItem="X6O-aO-q0e" secondAttribute="top" constant="20" id="NOc-gD-YLh"/>
@@ -50,7 +50,7 @@ type</string>
                     </view>
                 </subviews>
             </view>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="X6O-aO-q0e" firstAttribute="top" secondItem="0bP-XB-Aue" secondAttribute="top" id="6qr-1J-T2Y"/>
                 <constraint firstAttribute="trailing" secondItem="X6O-aO-q0e" secondAttribute="trailing" id="ESP-Oj-qpT"/>

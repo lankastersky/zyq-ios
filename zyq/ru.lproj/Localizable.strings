@@ -1,6 +1,7 @@
 "tab_bar_stage1_title" = "Ступень I";
 "tab_bar_stage2_title" = "Ступень II";
 "tab_bar_stage3_title" = "Ступень III";
+"tab_bar_audio_title" = "Аудио";
 "tab_bar_help_title" = "Справка";
 
 "stage1_screen_title" = "Ступень I";
@@ -15,9 +16,20 @@
 "ex_group_closing" = "Заключительные упражнения";
 "ex_group_treatment" = "Диагностика и лечение";
 
+"audio_screen_title" = "Аудио";
+
 "help_screen_title" = "О программе";
 "help_screen_send_feedback" = "Связаться с автором";
 "help_screen_send_feedback_alert_title" = "Не удалось связаться с автором";
 "help_screen_send_feedback_alert_text" = "Пожалуйста убедитесь, что у вас настроено приложение для отправки почты";
 "help_screen_description" = "todo";
 "help_screen_version" = "Lankastersky Studio\nВерсия %@";
+
+"song_3_Feng_Shui_60" = "Фен Шуй (60 мин.)";
+"song_4_Garmonic_72" = "Гармоника (72 мин.)";
+"song_5_Gong_Yi_63" = "Гонг Йи (63 мин.)";
+"song_2_Himalaya_50" = "Гималаи (50 мин.)";
+"song_8_Tai_Chi_61" = "Тай Чи (61 мин.)";
+"song_6_Tibetian_Bowls_66" = "Тибетские чашы (66 мин.)";
+"song_7_Big_Tree_44" = "Большое дерево (45 мин.)";
+"song_1_Yan_Qi_73" = "Ян-ци (73 мин.)";

@@ -13,8 +13,6 @@ final class CollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        //typeLabel.textColor = UIColor.darkSkinColor
-
         // See https://github.com/larrylegend/CollectionViewAutoSizingTest
         contentView.translatesAutoresizingMaskIntoConstraints = false
 
@@ -50,7 +48,6 @@ final class CollectionViewCell: UICollectionViewCell {
         layer.shadowRadius = 2.0
         layer.shadowOpacity = 1.0
         layer.masksToBounds = false
-//        layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: contentView.layer.cornerRadius).cgPath
         layer.backgroundColor = UIColor.white.cgColor
     }
 }

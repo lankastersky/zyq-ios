@@ -3,6 +3,18 @@ import UIKit
 class ZyqViewController: UIViewController {
 
     var descriptionUrl: URL?
+    var indicator: UIActivityIndicatorView?
+
+    override func viewDidLoad() {
+        indicator =
+            UIActivityIndicatorView(style: UIActivityIndicatorView.Style.whiteLarge)
+        indicator?.color = UIColor.gray
+        indicator?.frame = CGRect(x: 0, y: 0, width: 80, height: 80)
+        indicator?.center = view.center
+        self.view.addSubview(indicator!)
+        self.view.bringSubviewToFront(indicator!)
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+    }
 
     func setupNavigationBarAppearance(level: LevelType) {
         var headerImage: UIImage?
@@ -29,10 +41,10 @@ class ZyqViewController: UIViewController {
 
     func initBarItems() {
         if (descriptionUrl != nil) {
-            let helpButton = UIBarButtonItem(
+            let descriptionButton = UIBarButtonItem(
                 image: UIImage(named: "help_icon")?.withRenderingMode(.alwaysOriginal),
             style: .plain, target: self, action: #selector(showDescription))
-            navigationItem.rightBarButtonItem = helpButton
+            navigationItem.rightBarButtonItem = descriptionButton
         } else {
             navigationItem.rightBarButtonItem = nil
         }
