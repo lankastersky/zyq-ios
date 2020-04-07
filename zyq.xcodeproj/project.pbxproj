@@ -73,6 +73,8 @@
 		73567BC324392D480011B915 /* AudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73567BC124392B0F0011B915 /* AudioViewController.swift */; };
 		73CD82F920E463EA00FEF64D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CD82F820E463EA00FEF64D /* AppDelegate.swift */; };
 		73CD830220E463ED00FEF64D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73CD830120E463ED00FEF64D /* Assets.xcassets */; };
+		73CF02C6243C2C0100BED6CD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 73CF02C5243C2C0000BED6CD /* GoogleService-Info.plist */; };
+		73CF02C7243C2C0100BED6CD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 73CF02C5243C2C0000BED6CD /* GoogleService-Info.plist */; };
 		98CD97F6F290D6E78DCD2C49 /* Pods_zyq.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A471F31B75F0A78B09DECB7B /* Pods_zyq.framework */; };
 		D8787A0D9B4FEA4B15248B48 /* Pods_zyqTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8626312D0A57FF844053D91 /* Pods_zyqTests.framework */; };
 /* End PBXBuildFile section */
@@ -132,6 +134,7 @@
 		73CD830120E463ED00FEF64D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		73CD830620E463EE00FEF64D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73CD830B20E463EE00FEF64D /* zyqTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = zyqTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		73CF02C5243C2C0000BED6CD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7ADBDD569EFD56C2A8AF7871 /* Pods-zyqTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zyqTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-zyqTests/Pods-zyqTests.release.xcconfig"; sourceTree = "<group>"; };
 		8E70FA933F47CA540D6DFED0 /* Pods-zyq.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zyq.debug.xcconfig"; path = "Pods/Target Support Files/Pods-zyq/Pods-zyq.debug.xcconfig"; sourceTree = "<group>"; };
 		94BAA741A1BF9C270700F38A /* Pods_zenTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_zenTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -213,6 +216,7 @@
 				73CD82F820E463EA00FEF64D /* AppDelegate.swift */,
 				73CD830120E463ED00FEF64D /* Assets.xcassets */,
 				73CD830620E463EE00FEF64D /* Info.plist */,
+				73CF02C5243C2C0000BED6CD /* GoogleService-Info.plist */,
 			);
 			path = zyq;
 			sourceTree = "<group>";
@@ -312,8 +316,8 @@
 				73CD82F220E463EA00FEF64D /* Frameworks */,
 				73CD82F320E463EA00FEF64D /* Resources */,
 				73EEFE3620F6731D004D14ED /* ShellScript */,
-				73872A7D211E6CCF001545B3 /* ShellScript */,
 				E76C7C3AAB90743ABF8EDE3B /* [CP] Embed Pods Frameworks */,
+				73872A7D211E6CCF001545B3 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -398,6 +402,7 @@
 				734BD5F12430278B006E6A16 /* assets in Resources */,
 				7337717921111C7E004A58F8 /* Localizable.strings in Resources */,
 				7355777C2429BFB0004016FE /* Main.storyboard in Resources */,
+				73CF02C6243C2C0100BED6CD /* GoogleService-Info.plist in Resources */,
 				73567BBC24390F490011B915 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -413,6 +418,7 @@
 				734BD60D2432C11C006E6A16 /* images in Resources */,
 				734BD60A2432B80E006E6A16 /* ExerciseViewController.xib in Resources */,
 				7337717A21111C7E004A58F8 /* Localizable.strings in Resources */,
+				73CF02C7243C2C0100BED6CD /* GoogleService-Info.plist in Resources */,
 				73567BBD24390F490011B915 /* InfoPlist.strings in Resources */,
 				735577812429C10D004016FE /* Main.storyboard in Resources */,
 			);
@@ -445,12 +451,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#\"${PODS_ROOT}/Fabric/run\"\n";
+			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n\n";
 		};
 		73EEFE3620F6731D004D14ED /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -472,11 +480,19 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-zyq/Pods-zyq-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/VIMediaCache/VIMediaCache.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VIMediaCache.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -738,7 +754,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = URX5QAH68L;
 				INFOPLIST_FILE = "$(SRCROOT)/zyq/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;

@@ -35,12 +35,16 @@ final class ExerciseService {
             ExerciseType.main.description, ExerciseType.main, level))
         groups.append(ExerciseGroup(
             ExerciseType.supporting.description, ExerciseType.supporting, level))
-        // TODO: check if we have them
-        groups.append(ExerciseGroup(
-            ExerciseType.closing.description, ExerciseType.closing, level))
-        // TODO: check if we have them
-        groups.append(ExerciseGroup(
-            ExerciseType.treatment.description, ExerciseType.treatment, level))
+        let closingEx = getExercises(level: level, type: ExerciseType.closing)
+        if !closingEx.isEmpty {
+            groups.append(ExerciseGroup(
+                ExerciseType.closing.description, ExerciseType.closing, level))
+        }
+        let treatmentEx = getExercises(level: level, type: ExerciseType.treatment)
+        if !treatmentEx.isEmpty {
+            groups.append(ExerciseGroup(
+                ExerciseType.treatment.description, ExerciseType.treatment, level))
+        }
         return groups
     }
 

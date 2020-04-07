@@ -5,6 +5,10 @@ target 'zyq' do
 
   pod 'SwiftLint', '~> 0.27'
   pod 'SwiftyJSON', '~> 4.0'
+  pod 'VIMediaCache'
+  pod 'Firebase/Crashlytics'
+  # Recommended: Add the Firebase pod for Google Analytics
+  pod 'Firebase/Analytics'
 
 target 'zyqTests' do
     inherit! :search_paths

@@ -1,5 +1,6 @@
 import UIKit
 import AVFoundation
+import VIMediaCache
 
 /// Plays audio.
 class AudioViewController: ListViewController {
@@ -18,6 +19,7 @@ class AudioViewController: ListViewController {
     private var player : AVQueuePlayer?
     private var playerLooper: AVPlayerLooper?
     private var timeObserverToken: Any?
+    private let resourceLoaderManager = VIResourceLoaderManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -130,10 +132,11 @@ class AudioViewController: ListViewController {
         }
 
         player = AVQueuePlayer()
-        let playerItem = AVPlayerItem.init(url: url)
-        playerLooper = AVPlayerLooper(player: player!, templateItem: playerItem)
+        //let playerItem = AVPlayerItem.init(url: url)
+        let playerItem = resourceLoaderManager.playerItem(with: url)
+        playerLooper = AVPlayerLooper(player: player!, templateItem: playerItem!)
 
-        self.player?.insert(playerItem, after: nil)
+        self.player?.insert(playerItem!, after: nil)
         self.player?.play()
         addPeriodicTimeObserver()
 

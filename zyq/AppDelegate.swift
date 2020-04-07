@@ -1,5 +1,6 @@
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegate {
@@ -13,11 +14,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
                      didFinishLaunchingWithOptions launchOptions:
         [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
+        FirebaseApp.configure()
         configureAppearance()
         configureTabBarIcons()
 
         FeaturesService().storeAppVersion()
         exerciseService.load()
+        
         return true
     }
 
